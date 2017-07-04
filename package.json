@@ -7,6 +7,7 @@
     "node": "6.11.0"
   },
   "scripts": {
+    "start": "node server.js",
     "ng": "ng",
     "start-app": "ng serve",
     "serve-ssl": "ng serve --ssl 1 --ssl-key certificate/key.pem --ssl-cert certificate/cert.pem",
@@ -14,6 +15,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
+    "postinstall": "ng build",
     "start-node": "node ./bin/www"
   },
   "private": true,
