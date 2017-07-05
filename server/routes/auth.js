@@ -67,21 +67,53 @@ authRouter.get('/login', (req, res) => {
         "client_id": "3MVG9d8..z.hDcPLJsDkfc.PmnZBpNM_3Dzm7tuxU0hnQ8g1vl0N7WZeRFT03wPONBqTOzzk8sJ6DF0t9TbB3",
         "client_secret": "6258344917667469925",
         "username": "kowsalya@samplecrm.com",
-        "password": ""
+        "password": "salesforce@75MOuohAuXr2svXB6UH3BTc2c"
     }
     // performRequest("oauth2/token", "GET")
 
-    https.get('https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9d8..z.hDcPLJsDkfc.PmnZBpNM_3Dzm7tuxU0hnQ8g1vl0N7WZeRFT03wPONBqTOzzk8sJ6DF0t9TbB3&client_secret=6258344917667469925&username=kowsalya@samplecrm.com&password=salesforce@75MOuohAuXr2svXB6UH3BTc2c', (res) => {
-        console.log('statusCode:', res.statusCode);
-        console.log('headers:', res.headers);
+    // https.post('https://login.salesforce.com/services/oauth2/token?grant_type=password&client_id=3MVG9d8..z.hDcPLJsDkfc.PmnZBpNM_3Dzm7tuxU0hnQ8g1vl0N7WZeRFT03wPONBqTOzzk8sJ6DF0t9TbB3&client_secret=6258344917667469925&username=kowsalya@samplecrm.com&password=salesforce@75MOuohAuXr2svXB6UH3BTc2c', (res) => {
+    //     console.log('statusCode:', res.statusCode);
+    //     console.log('headers:', res.headers);
 
-        res.on('data', (d) => {
-            process.stdout.write(d);
+    //     res.on('data', (d) => {
+    //         process.stdout.write(d);
+    //     });
+
+    // }).on('error', (e) => {
+    //     console.error(e);
+    // });
+
+    var headers = {
+        'Content-Type': 'application/json'
+    };
+
+    var options = {
+        host: "login.salesforce.com",
+        path: "services/oauth2/token",
+        method: "POST",
+        headers: headers
+    };
+
+    var dataString = JSON.stringify(data);
+
+    var req = https.request(options, function (res) {
+        res.setEncoding('utf-8');
+
+        var responseString = '';
+
+        res.on('data', function (data) {
+            responseString += data;
         });
 
-    }).on('error', (e) => {
-        console.error(e);
+        res.on('end', function () {
+            console.log(responseString);
+            // var responseObject = JSON.parse(responseString);
+            // success(responseObject);
+        });
     });
+
+    req.write(dataString);
+    req.end();
 });
 
 
