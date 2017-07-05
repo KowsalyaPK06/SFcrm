@@ -15,7 +15,7 @@ export class SampleComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    this.backendService.getSFVersions().subscribe(res => {
+    this.backendService.login().subscribe(res => {
       console.log(res);
     });
   }

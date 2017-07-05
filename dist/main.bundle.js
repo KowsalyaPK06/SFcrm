@@ -241,6 +241,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
+// import 'rxjs/Rx';
 var BackendService = (function () {
     function BackendService(http) {
         this.http = http;
@@ -254,9 +255,16 @@ var BackendService = (function () {
         return this.http.post('/api/createLead', body)
             .map(function (res) { return res.json(); });
     };
+    BackendService.prototype.login = function () {
+        return this.http.get('/auth/login')
+            .map(function (res) { return res.json(); });
+    };
     BackendService.prototype.getSFVersions = function () {
         return this.http.get('https://sampledomaini-dev-ed.my.salesforce.com/services/data/')
             .map(function (res) { return res.json(); });
+        // .subscribe(
+        // (data) => { console.log(data); },
+        // (err) => { console.log(err); }); // Reach here if fails
     };
     BackendService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only

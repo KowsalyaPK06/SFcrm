@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Headers, Http } from '@angular/http';
 import 'rxjs/add/operator/map';
+// import 'rxjs/Rx';
 
 
 @Injectable()
@@ -19,9 +20,17 @@ export class BackendService {
       .map(res => res.json());
   }
 
+  login() {
+    return this.http.get('/auth/login')
+      .map(res => res.json());
+  }
+
   getSFVersions() {
     return this.http.get('https://sampledomaini-dev-ed.my.salesforce.com/services/data/')
       .map(res => res.json());
+      // .subscribe(
+      // (data) => { console.log(data); },
+      // (err) => { console.log(err); }); // Reach here if fails
   }
 
 

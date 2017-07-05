@@ -266,7 +266,7 @@ var SampleComponent = (function () {
         this.title = "Get Versions";
     }
     SampleComponent.prototype.ngOnInit = function () {
-        this.backendService.getSFVersions().subscribe(function (res) {
+        this.backendService.login().subscribe(function (res) {
             console.log(res);
         });
     };
