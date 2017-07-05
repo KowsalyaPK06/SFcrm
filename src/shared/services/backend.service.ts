@@ -21,24 +21,27 @@ export class BackendService {
   }
 
   login() {
-    // return this.http.get('/auth/login')
-    //   .map(res => res.json());
+    return this.http.get('/auth/login')
+      .map(res => res.json());
 
-    var data = {
-      "grant_type": "password",
-      "client_id": "3MVG9d8..z.hDcPLJsDkfc.PmnZBpNM_3Dzm7tuxU0hnQ8g1vl0N7WZeRFT03wPONBqTOzzk8sJ6DF0t9TbB3",
-      "client_secret": "6258344917667469925",
-      "username": "kowsalya@samplecrm.com",
-      "password": "salesforce@75MOuohAuXr2svXB6UH3BTc2c"
-    }
+    // var headers = new Headers();
+    // headers.append("Content-Type", "application/x-www-form-urlencoded");
 
-    var body = JSON.stringify(data);
+    // var data = {
+    //   "grant_type": "authorization_code",
+    //   "client_id": "3MVG9d8..z.hDcPLJsDkfc.PmnZBpNM_3Dzm7tuxU0hnQ8g1vl0N7WZeRFT03wPONBqTOzzk8sJ6DF0t9TbB3",
+    //   "client_secret": "6258344917667469925",
+    //   "username": "kowsalya@samplecrm.com",
+    //   "password": "salesforce@75MOuohAuXr2svXB6UH3BTc2c"
+    // }
 
-    return this.http.post('https://login.salesforce.com/services/oauth2/token', body)
-      .map(res => {
-        console.log(res)
-        res.json()
-      });
+    // var body = JSON.stringify(data);
+
+    // return this.http.post('https://login.salesforce.com/services/oauth2/token', body, { headers: headers })
+    //   .map(res => {
+    //     console.log(res)
+    //     res.json()
+    //   });
   }
 
   getSFVersions() {
