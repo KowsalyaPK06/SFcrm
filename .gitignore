@@ -5,6 +5,7 @@
 /certificate
 
 # compiled output
+/dist
 /tmp
 /out-tsc
 
