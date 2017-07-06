@@ -5,6 +5,7 @@ import { onboardRouting } from './onboarding.routing';
 
 import { DisplayAllLeadsComponent } from './display-all-leads.component';
 import { CreateLeadComponent } from './create-lead.component';
+import { WebToLeadComponent } from './web-to-lead.component';
 
 
 @NgModule({
@@ -15,7 +16,8 @@ import { CreateLeadComponent } from './create-lead.component';
     ],
     declarations: [
         DisplayAllLeadsComponent,
-        CreateLeadComponent
+        CreateLeadComponent,
+        WebToLeadComponent
     ]
 })
 
