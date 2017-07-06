@@ -19,7 +19,7 @@
 			<label>First Name</label>
 		</div>
 		<div class="col-md-6">
-			<input type="text" name="first-name" id="first-name" [(ngModel)]='lead["First Name"]' class="form-control">
+			<input type="text" name="first-name" id="first-name" [(ngModel)]="lead.FirstName" class="form-control">
 		</div>
 	</div>
 
@@ -28,7 +28,7 @@
 			<label>Last Name</label>
 		</div>
 		<div class="col-md-6">
-			<input type="text" name="last-name" id="last-name" [(ngModel)]='lead["Last Name"]' class="form-control">
+			<input type="text" name="last-name" id="last-name" [(ngModel)]="lead.LastName" class="form-control">
 		</div>
 	</div>
 
@@ -68,7 +68,7 @@
 	</div>
 </form>
 
-<form>
+<!--<form>
 	<div class="form-group">
 		<label for="single">single</label>
 		<input type="file" class="form-control btn" name="single" ng2FileSelect [uploader]="uploader" />
@@ -77,4 +77,4 @@
 	<button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()">
     	Upload
     </button>
-</form>
+</form>-->

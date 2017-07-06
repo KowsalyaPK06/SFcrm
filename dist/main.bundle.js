@@ -46,7 +46,7 @@ module.exports = module.exports.toString();
 /***/ "../../../../../src/app/app.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<!--<nav class=\"navbar navbar-fixed-top navbar-dark bg-inverse\">-->\n<nav class=\"navbar navbar-fixed-top navbar-default\">\n  <div class=\"container\">\n    <a class=\"navbar-brand\">PhonePe</a>\n    <ul class=\"nav navbar-nav\" routerLinkActive=\"active\">\n      <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"onboard\">Home</a></li>\n      <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"onboard/createLead\">Search</a></li>\n    </ul>\n  </div>\n</nav>\n\n<div class=\"app-body\">\n  <router-outlet></router-outlet>\n</div>"
+module.exports = "<!--<nav class=\"navbar navbar-fixed-top navbar-dark bg-inverse\">-->\n<nav class=\"navbar navbar-fixed-top navbar-default\">\n  <div class=\"container\">\n    <a class=\"navbar-brand\">PhonePe</a>\n    <ul class=\"nav navbar-nav\" routerLinkActive=\"active\">\n      <li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"onboard\">Home</a></li>\n      <!--<li class=\"nav-item\"><a class=\"nav-link\" routerLink=\"onboard/createLead\">Search</a></li>-->\n    </ul>\n  </div>\n</nav>\n\n<div class=\"app-body\">\n  <router-outlet></router-outlet>\n</div>"
 
 /***/ }),
 
@@ -55,6 +55,7 @@ module.exports = "<!--<nav class=\"navbar navbar-fixed-top navbar-dark bg-invers
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__ = __webpack_require__("../../../../../src/shared/services/backend.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -62,21 +63,36 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
 
 var AppComponent = (function () {
-    function AppComponent() {
+    function AppComponent(backendService) {
+        this.backendService = backendService;
         this.title = 'app';
     }
+    AppComponent.prototype.login = function () {
+        this.backendService.login().subscribe(function (res) {
+            console.log(res);
+        });
+    };
+    AppComponent.prototype.ngOnInit = function () {
+        this.login();
+    };
     return AppComponent;
 }());
 AppComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
         selector: 'app-root',
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
-    })
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__["a" /* BackendService */]) === "function" && _a || Object])
 ], AppComponent);
 
+var _a;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -112,7 +128,7 @@ var AppModule = (function () {
     return AppModule;
 }());
 AppModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */])({
         imports: [
             __WEBPACK_IMPORTED_MODULE_3__app_routing__["a" /* appRouting */],
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -148,7 +164,7 @@ var appRoutes = [
     { path: '**', redirectTo: '/404', pathMatch: 'full' },
     { path: '404', component: __WEBPACK_IMPORTED_MODULE_1__not_found_component__["a" /* NoComponentFound */] }
 ];
-var appRouting = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forRoot(appRoutes);
+var appRouting = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forRoot(appRoutes);
 //# sourceMappingURL=app.routing.js.map
 
 /***/ }),
@@ -173,7 +189,7 @@ var NoComponentFound = (function () {
     return NoComponentFound;
 }());
 NoComponentFound = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
         template: "<div>No Component Available</div>"
     })
 ], NoComponentFound);
@@ -213,7 +229,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 
 
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["a" /* enableProdMode */])();
 }
 __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */]);
 //# sourceMappingURL=main.js.map
@@ -246,7 +262,10 @@ var BackendService = (function () {
     function BackendService(http) {
         this.http = http;
     }
-    // Get all posts from the API
+    BackendService.prototype.login = function () {
+        return this.http.get('/api/login')
+            .map(function (res) { return res.json(); });
+    };
     BackendService.prototype.getLeads = function () {
         return this.http.get('/api/getLeads')
             .map(function (res) { return res.json(); });
@@ -255,32 +274,6 @@ var BackendService = (function () {
         return this.http.post('/api/createLead', body)
             .map(function (res) { return res.json(); });
     };
-    BackendService.prototype.login = function () {
-        return this.http.get('/auth/login')
-            .map(function (res) { return res.json(); });
-        // var headers = new Headers();
-        // headers.append("Content-Type", "application/x-www-form-urlencoded");
-        // var data = {
-        //   "grant_type": "authorization_code",
-        //   "client_id": "3MVG9d8..z.hDcPLJsDkfc.PmnZBpNM_3Dzm7tuxU0hnQ8g1vl0N7WZeRFT03wPONBqTOzzk8sJ6DF0t9TbB3",
-        //   "client_secret": "6258344917667469925",
-        //   "username": "kowsalya@samplecrm.com",
-        //   "password": "salesforce@75MOuohAuXr2svXB6UH3BTc2c"
-        // }
-        // var body = JSON.stringify(data);
-        // return this.http.post('https://login.salesforce.com/services/oauth2/token', body, { headers: headers })
-        //   .map(res => {
-        //     console.log(res)
-        //     res.json()
-        //   });
-    };
-    BackendService.prototype.getSFVersions = function () {
-        return this.http.get('https://sampledomaini-dev-ed.my.salesforce.com/services/data/')
-            .map(function (res) { return res.json(); });
-        // .subscribe(
-        // (data) => { console.log(data); },
-        // (err) => { console.log(err); }); // Reach here if fails
-    };
     BackendService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
@@ -288,7 +281,7 @@ var BackendService = (function () {
     return BackendService;
 }());
 BackendService = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["c" /* Injectable */])(),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
 ], BackendService);
 

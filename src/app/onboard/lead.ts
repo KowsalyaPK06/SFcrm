@@ -1,7 +1,8 @@
 interface LeadData {
-    "Salutation"?: any;
-    "First Name"?: string;
-    "Last Name"?: string;
+    "attribute"?: object;
+    "Salutation"?: string;
+    "FirstName"?: string;
+    "LastName"?: string;
     "Company"?: string;
     "Mobile"?: string;
     "Phone"?: string;

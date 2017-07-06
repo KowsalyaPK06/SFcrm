@@ -24,16 +24,15 @@ app.use(express.static(path.join(__dirname, 'dist')));
 
 // Get our API routes
 const api = require('./server/routes/api');
-const auth = require('./server/routes/auth');
 // Set our api routes
 app.use('/api', api);
-app.use('/auth', auth);
-app.use('/sf', auth);
+app.use('/sf', api);
 
 // Catch all other routes and return the index file
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'dist/index.html'));
 });
+
 
 /**
  * Get port from environment and store in Express.
@@ -41,16 +40,10 @@ app.get('*', (req, res) => {
 const port = process.env.PORT || '3000';
 app.set('port', port);
 
+
 /**
- * Create HTTP server.
  * Listen on provided port, on all network interfaces.
  */
-// uncomment for local development
-// const server = http.createServer(app);
-// server.listen(port, () => console.log(`API running on localhost:${port}`));
-
-
-// uncomment for Heroku deployment
 app.listen(app.get('port'), function () {
     console.log('Express server listening on port ' + app.get('port'));
 });

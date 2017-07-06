@@ -5,9 +5,7 @@ import { onboardRouting } from './onboarding.routing';
 
 import { DisplayAllLeadsComponent } from './display-all-leads.component';
 import { CreateLeadComponent } from './create-lead.component';
-import { FileSelectDirective } from 'ng2-file-upload';
 
-import { SampleComponent } from './sample.component';
 
 @NgModule({
     imports: [
@@ -17,9 +15,7 @@ import { SampleComponent } from './sample.component';
     ],
     declarations: [
         DisplayAllLeadsComponent,
-        CreateLeadComponent,
-        FileSelectDirective,
-        SampleComponent
+        CreateLeadComponent
     ]
 })
 

@@ -16,9 +16,13 @@ export class DisplayAllLeadsComponent implements OnInit {
     private backendService: BackendService,
   ) { }
 
-  ngOnInit(): void {
+  getLeads(): void {
     this.backendService.getLeads().subscribe(leads => {
       this.leads = leads;
     });
+  }
+
+  ngOnInit(): void {
+    this.getLeads();
   }
 }

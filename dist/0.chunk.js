@@ -3,7 +3,7 @@ webpackJsonp([0],{
 /***/ "../../../../../src/app/onboard/create-lead.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<form class=\"row align-vertical\">\n\t<div class=\"col-md-12 align-vertical\">\n\t\tCreate Lead\n\t</div>\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>Salutation</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<select name=\"salutation\" [(ngModel)]=\"lead.Salutation\" class=\"form-control\">\n\t\t\t\t<!--<option *ngFor=\"let salutation of salutations\" [ngValue]=\"salutation.value\">{{salutation.display}}</option>-->\n\t\t\t\t<option *ngFor=\"let salutation of salutations\" [ngValue]=\"salutation\">{{salutation}}</option>\n\t\t\t</select>\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>First Name</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<input type=\"text\" name=\"first-name\" id=\"first-name\" [(ngModel)]='lead[\"First Name\"]' class=\"form-control\">\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>Last Name</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<input type=\"text\" name=\"last-name\" id=\"last-name\" [(ngModel)]='lead[\"Last Name\"]' class=\"form-control\">\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>Company</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<input type=\"text\" name=\"company\" id=\"company\" [(ngModel)]=\"lead.Company\" class=\"form-control\">\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>Phone Number</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<input type=\"text\" name=\"phone\" id=\"phone\" [(ngModel)]=\"lead.Phone\" class=\"form-control\">\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>Email</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<input type=\"email\" name=\"email\" id=\"email\" [(ngModel)]=\"lead.Email\" class=\"form-control\">\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<button (click)=\"add()\" class=\"btn\"> Submit </button>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<button type=\"reset\" class=\"btn\"> Reset </button>\n\t</div>\n</form>\n\n<form>\n\t<div class=\"form-group\">\n\t\t<label for=\"single\">single</label>\n\t\t<input type=\"file\" class=\"form-control btn\" name=\"single\" ng2FileSelect [uploader]=\"uploader\" />\n\t</div>\n\n\t<button type=\"button\" class=\"btn btn-success btn-s\" (click)=\"uploader.uploadAll()\">\n    \tUpload\n    </button>\n</form>"
+module.exports = "<form class=\"row align-vertical\">\n\t<div class=\"col-md-12 align-vertical\">\n\t\tCreate Lead\n\t</div>\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>Salutation</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<select name=\"salutation\" [(ngModel)]=\"lead.Salutation\" class=\"form-control\">\n\t\t\t\t<!--<option *ngFor=\"let salutation of salutations\" [ngValue]=\"salutation.value\">{{salutation.display}}</option>-->\n\t\t\t\t<option *ngFor=\"let salutation of salutations\" [ngValue]=\"salutation\">{{salutation}}</option>\n\t\t\t</select>\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>First Name</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<input type=\"text\" name=\"first-name\" id=\"first-name\" [(ngModel)]=\"lead.FirstName\" class=\"form-control\">\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>Last Name</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<input type=\"text\" name=\"last-name\" id=\"last-name\" [(ngModel)]=\"lead.LastName\" class=\"form-control\">\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>Company</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<input type=\"text\" name=\"company\" id=\"company\" [(ngModel)]=\"lead.Company\" class=\"form-control\">\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>Phone Number</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<input type=\"text\" name=\"phone\" id=\"phone\" [(ngModel)]=\"lead.Phone\" class=\"form-control\">\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<div class=\"col-md-6\">\n\t\t\t<label>Email</label>\n\t\t</div>\n\t\t<div class=\"col-md-6\">\n\t\t\t<input type=\"email\" name=\"email\" id=\"email\" [(ngModel)]=\"lead.Email\" class=\"form-control\">\n\t\t</div>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<button (click)=\"add()\" class=\"btn\"> Submit </button>\n\t</div>\n\n\t<div class=\"col-md-6 form-group\">\n\t\t<button type=\"reset\" class=\"btn\"> Reset </button>\n\t</div>\n</form>\n\n<!--<form>\n\t<div class=\"form-group\">\n\t\t<label for=\"single\">single</label>\n\t\t<input type=\"file\" class=\"form-control btn\" name=\"single\" ng2FileSelect [uploader]=\"uploader\" />\n\t</div>\n\n\t<button type=\"button\" class=\"btn btn-success btn-s\" (click)=\"uploader.uploadAll()\">\n    \tUpload\n    </button>\n</form>-->"
 
 /***/ }),
 
@@ -12,8 +12,7 @@ module.exports = "<form class=\"row align-vertical\">\n\t<div class=\"col-md-12 
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_file_upload__ = __webpack_require__("../../../../ng2-file-upload/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_ng2_file_upload__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__lead__ = __webpack_require__("../../../../../src/app/onboard/lead.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__shared_services_backend_service__ = __webpack_require__("../../../../../src/shared/services/backend.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return CreateLeadComponent; });
@@ -31,62 +30,31 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 var CreateLeadComponent = (function () {
-    function CreateLeadComponent(backendService) {
+    function CreateLeadComponent(router, backendService) {
+        this.router = router;
         this.backendService = backendService;
-        // salutations = [{
-        //   "value": "Mr.",
-        //   "display": "Mr."
-        // }, {
-        //   "value": "Mrs.",
-        //   "display": "Mrs."
-        // }, {
-        //   "value": "Ms.",
-        //   "display": "Ms."
-        // }, {
-        //   "value": "Dr.",
-        //   "display": "Dr."
-        // }, {
-        //   "value": "Prof.",
-        //   "display": "Prof."
-        // }];
         this.salutations = ["Mr.", "Mrs.", "Ms.", "Dr.", "Prof."];
         this.lead = new __WEBPACK_IMPORTED_MODULE_2__lead__["a" /* Lead */]();
-        this.uploader = new __WEBPACK_IMPORTED_MODULE_1_ng2_file_upload__["FileUploader"]({ url: '/api/upload' });
     }
     CreateLeadComponent.prototype.ngOnInit = function () {
-        // Retrieve posts from the API
-        // this.backendService.getLeads().subscribe(leads => {
-        //   this.leads = leads;
-        // });
     };
     CreateLeadComponent.prototype.add = function () {
-        console.log(this.lead);
-        var body = {
-            records: [this.lead]
-        };
+        var _this = this;
+        var body = this.lead;
         this.backendService.createLead(body).subscribe(function (data) {
-            console.log(data);
+            _this.router.navigate(['/onboard']);
         });
-    };
-    // public uploader: FileUploader = new FileUploader({ url: '/api/upload', disableMultipart: true });
-    CreateLeadComponent.prototype.uploadFile = function () {
-        // var formData = {
-        //   "authtoken": authToken,
-        //   "scope": "crmapi",
-        //   "id": lead_id,
-        //   "content": streamifier.createReadStream(fileItem.buffer),
-        // };
     };
     return CreateLeadComponent;
 }());
 CreateLeadComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
         template: __webpack_require__("../../../../../src/app/onboard/create-lead.component.html")
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_backend_service__["a" /* BackendService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["a" /* Router */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_3__shared_services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__shared_services_backend_service__["a" /* BackendService */]) === "function" && _b || Object])
 ], CreateLeadComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=create-lead.component.js.map
 
 /***/ }),
@@ -94,7 +62,7 @@ var _a;
 /***/ "../../../../../src/app/onboard/display-all-leads.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row  align-vertical\">\r\n\t<div class=\"col-md-12 form-group\">\r\n\t\t<button type=\"button\" class=\"btn btn-default btn-sm\" title=\"Create Lead\">\r\n\t\t\t<a routerLink=\"/onboard/createLead\" routerLinkActive=\"active\">\r\n\t\t\t\t<span class=\"glyphicon glyphicon-plus\"></span>\r\n\t\t\t</a>\r\n\t\t</button>\r\n\t</div>\r\n\r\n\r\n\t<div class=\"col-md-12\">\r\n\t\t<table class=\"table\">\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Lead Name</th>\r\n\t\t\t\t<th>Comapany Name</th>\r\n\t\t\t\t<th>Email</th>\r\n\t\t\t\t<th>Phone</th>\r\n\t\t\t</tr>\r\n\t\t\t<tr *ngFor=\"let lead of leads\">\r\n\t\t\t\t<td>{{lead.Salutation}} {{lead[\"First Name\"]}} {{lead[\"Last Name\"]}}</td>\r\n\t\t\t\t<td>{{lead.Company}}</td>\r\n\t\t\t\t<td>{{lead.Email}}</td>\r\n\t\t\t\t<td>{{lead.Phone}}</td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</div>\r\n</div>"
+module.exports = "<div class=\"row  align-vertical\">\r\n\t<div class=\"col-md-12 form-group\">\r\n\t\t<button type=\"button\" class=\"btn btn-default btn-sm\" title=\"Create Lead\">\r\n\t\t\t<a routerLink=\"/onboard/createLead\" routerLinkActive=\"active\">\r\n\t\t\t\t<span class=\"glyphicon glyphicon-plus\"></span>\r\n\t\t\t</a>\r\n\t\t</button>\r\n\t</div>\r\n\r\n\r\n\t<div class=\"col-md-12\">\r\n\t\t<table class=\"table\">\r\n\t\t\t<tr>\r\n\t\t\t\t<th>Lead Name</th>\r\n\t\t\t\t<th>Comapany Name</th>\r\n\t\t\t\t<th>Email</th>\r\n\t\t\t\t<th>Phone</th>\r\n\t\t\t</tr>\r\n\t\t\t<tr *ngFor=\"let lead of leads\">\r\n\t\t\t\t<td>{{lead.Salutation}} {{lead[\"FirstName\"]}} {{lead[\"LastName\"]}}</td>\r\n\t\t\t\t<td>{{lead.Company}}</td>\r\n\t\t\t\t<td>{{lead.Email}}</td>\r\n\t\t\t\t<td>{{lead.Phone}}</td>\r\n\t\t\t</tr>\r\n\t\t</table>\r\n\t</div>\r\n</div>"
 
 /***/ }),
 
@@ -120,16 +88,19 @@ var DisplayAllLeadsComponent = (function () {
     function DisplayAllLeadsComponent(backendService) {
         this.backendService = backendService;
     }
-    DisplayAllLeadsComponent.prototype.ngOnInit = function () {
+    DisplayAllLeadsComponent.prototype.getLeads = function () {
         var _this = this;
         this.backendService.getLeads().subscribe(function (leads) {
             _this.leads = leads;
         });
     };
+    DisplayAllLeadsComponent.prototype.ngOnInit = function () {
+        this.getLeads();
+    };
     return DisplayAllLeadsComponent;
 }());
 DisplayAllLeadsComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["e" /* Component */])({
         template: __webpack_require__("../../../../../src/app/onboard/display-all-leads.component.html")
     }),
     __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__["a" /* BackendService */]) === "function" && _a || Object])
@@ -166,9 +137,6 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__onboarding_routing__ = __webpack_require__("../../../../../src/app/onboard/onboarding.routing.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__display_all_leads_component__ = __webpack_require__("../../../../../src/app/onboard/display-all-leads.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__create_lead_component__ = __webpack_require__("../../../../../src/app/onboard/create-lead.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_file_upload__ = __webpack_require__("../../../../ng2-file-upload/index.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_ng2_file_upload___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_ng2_file_upload__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__sample_component__ = __webpack_require__("../../../../../src/app/onboard/sample.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "OnboardingModule", function() { return OnboardingModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -182,25 +150,21 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 
 
 
-
-
 var OnboardingModule = (function () {
     function OnboardingModule() {
     }
     return OnboardingModule;
 }());
 OnboardingModule = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["b" /* NgModule */])({
         imports: [
-            __WEBPACK_IMPORTED_MODULE_1__angular_common__["CommonModule"],
+            __WEBPACK_IMPORTED_MODULE_1__angular_common__["a" /* CommonModule */],
             __WEBPACK_IMPORTED_MODULE_2__angular_forms__["a" /* FormsModule */],
             __WEBPACK_IMPORTED_MODULE_3__onboarding_routing__["a" /* onboardRouting */]
         ],
         declarations: [
             __WEBPACK_IMPORTED_MODULE_4__display_all_leads_component__["a" /* DisplayAllLeadsComponent */],
-            __WEBPACK_IMPORTED_MODULE_5__create_lead_component__["a" /* CreateLeadComponent */],
-            __WEBPACK_IMPORTED_MODULE_6_ng2_file_upload__["FileSelectDirective"],
-            __WEBPACK_IMPORTED_MODULE_7__sample_component__["a" /* SampleComponent */]
+            __WEBPACK_IMPORTED_MODULE_5__create_lead_component__["a" /* CreateLeadComponent */]
         ]
     })
 ], OnboardingModule);
@@ -214,1059 +178,18 @@ OnboardingModule = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__create_lead_component__ = __webpack_require__("../../../../../src/app/onboard/create-lead.component.ts");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__sample_component__ = __webpack_require__("../../../../../src/app/onboard/sample.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__display_all_leads_component__ = __webpack_require__("../../../../../src/app/onboard/display-all-leads.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__create_lead_component__ = __webpack_require__("../../../../../src/app/onboard/create-lead.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return onboardRouting; });
 
 
 
 var onboardRoutes = [
-    { path: '', component: __WEBPACK_IMPORTED_MODULE_2__sample_component__["a" /* SampleComponent */] },
-    // { path: '', component: DisplayAllLeadsComponent },
-    { path: 'createLead', component: __WEBPACK_IMPORTED_MODULE_1__create_lead_component__["a" /* CreateLeadComponent */] }
+    { path: '', component: __WEBPACK_IMPORTED_MODULE_1__display_all_leads_component__["a" /* DisplayAllLeadsComponent */] },
+    { path: 'createLead', component: __WEBPACK_IMPORTED_MODULE_2__create_lead_component__["a" /* CreateLeadComponent */] }
 ];
-//   {
-//     path: 'heroes',
-//     component: HeroListComponent,
-//     data: { title: 'Heroes List' }
-//   },
-var onboardRouting = __WEBPACK_IMPORTED_MODULE_0__angular_router__["a" /* RouterModule */].forChild(onboardRoutes);
+var onboardRouting = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forChild(onboardRoutes);
 //# sourceMappingURL=onboarding.routing.js.map
-
-/***/ }),
-
-/***/ "../../../../../src/app/onboard/sample.component.html":
-/***/ (function(module, exports) {
-
-module.exports = "<div>\r\n    {{title}}\r\n</div>"
-
-/***/ }),
-
-/***/ "../../../../../src/app/onboard/sample.component.ts":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__ = __webpack_require__("../../../../../src/shared/services/backend.service.ts");
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SampleComponent; });
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-var SampleComponent = (function () {
-    function SampleComponent(backendService) {
-        this.backendService = backendService;
-        this.title = "Get Versions";
-    }
-    SampleComponent.prototype.ngOnInit = function () {
-        this.backendService.login().subscribe(function (res) {
-            console.log(res);
-        });
-    };
-    return SampleComponent;
-}());
-SampleComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
-        template: __webpack_require__("../../../../../src/app/onboard/sample.component.html")
-    }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__["a" /* BackendService */]) === "function" && _a || Object])
-], SampleComponent);
-
-var _a;
-//# sourceMappingURL=sample.component.js.map
-
-/***/ }),
-
-/***/ "../../../../ng2-file-upload/file-upload/file-drop.directive.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var file_uploader_class_1 = __webpack_require__("../../../../ng2-file-upload/file-upload/file-uploader.class.js");
-var FileDropDirective = (function () {
-    function FileDropDirective(element) {
-        this.fileOver = new core_1.EventEmitter();
-        this.onFileDrop = new core_1.EventEmitter();
-        this.element = element;
-    }
-    FileDropDirective.prototype.getOptions = function () {
-        return this.uploader.options;
-    };
-    FileDropDirective.prototype.getFilters = function () {
-        return {};
-    };
-    FileDropDirective.prototype.onDrop = function (event) {
-        var transfer = this._getTransfer(event);
-        if (!transfer) {
-            return;
-        }
-        var options = this.getOptions();
-        var filters = this.getFilters();
-        this._preventAndStop(event);
-        this.uploader.addToQueue(transfer.files, options, filters);
-        this.fileOver.emit(false);
-        this.onFileDrop.emit(transfer.files);
-    };
-    FileDropDirective.prototype.onDragOver = function (event) {
-        var transfer = this._getTransfer(event);
-        if (!this._haveFiles(transfer.types)) {
-            return;
-        }
-        transfer.dropEffect = 'copy';
-        this._preventAndStop(event);
-        this.fileOver.emit(true);
-    };
-    FileDropDirective.prototype.onDragLeave = function (event) {
-        if (this.element) {
-            if (event.currentTarget === this.element[0]) {
-                return;
-            }
-        }
-        this._preventAndStop(event);
-        this.fileOver.emit(false);
-    };
-    FileDropDirective.prototype._getTransfer = function (event) {
-        return event.dataTransfer ? event.dataTransfer : event.originalEvent.dataTransfer; // jQuery fix;
-    };
-    FileDropDirective.prototype._preventAndStop = function (event) {
-        event.preventDefault();
-        event.stopPropagation();
-    };
-    FileDropDirective.prototype._haveFiles = function (types) {
-        if (!types) {
-            return false;
-        }
-        if (types.indexOf) {
-            return types.indexOf('Files') !== -1;
-        }
-        else if (types.contains) {
-            return types.contains('Files');
-        }
-        else {
-            return false;
-        }
-    };
-    return FileDropDirective;
-}());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", file_uploader_class_1.FileUploader)
-], FileDropDirective.prototype, "uploader", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], FileDropDirective.prototype, "fileOver", void 0);
-__decorate([
-    core_1.Output(),
-    __metadata("design:type", core_1.EventEmitter)
-], FileDropDirective.prototype, "onFileDrop", void 0);
-__decorate([
-    core_1.HostListener('drop', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], FileDropDirective.prototype, "onDrop", null);
-__decorate([
-    core_1.HostListener('dragover', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", void 0)
-], FileDropDirective.prototype, "onDragOver", null);
-__decorate([
-    core_1.HostListener('dragleave', ['$event']),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", [Object]),
-    __metadata("design:returntype", Object)
-], FileDropDirective.prototype, "onDragLeave", null);
-FileDropDirective = __decorate([
-    core_1.Directive({ selector: '[ng2FileDrop]' }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], FileDropDirective);
-exports.FileDropDirective = FileDropDirective;
-
-
-/***/ }),
-
-/***/ "../../../../ng2-file-upload/file-upload/file-item.class.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var file_like_object_class_1 = __webpack_require__("../../../../ng2-file-upload/file-upload/file-like-object.class.js");
-var FileItem = (function () {
-    function FileItem(uploader, some, options) {
-        this.url = '/';
-        this.headers = [];
-        this.withCredentials = true;
-        this.formData = [];
-        this.isReady = false;
-        this.isUploading = false;
-        this.isUploaded = false;
-        this.isSuccess = false;
-        this.isCancel = false;
-        this.isError = false;
-        this.progress = 0;
-        this.index = void 0;
-        this.uploader = uploader;
-        this.some = some;
-        this.options = options;
-        this.file = new file_like_object_class_1.FileLikeObject(some);
-        this._file = some;
-        if (uploader.options) {
-            this.method = uploader.options.method || 'POST';
-            this.alias = uploader.options.itemAlias || 'file';
-        }
-        this.url = uploader.options.url;
-    }
-    FileItem.prototype.upload = function () {
-        try {
-            this.uploader.uploadItem(this);
-        }
-        catch (e) {
-            this.uploader._onCompleteItem(this, '', 0, {});
-            this.uploader._onErrorItem(this, '', 0, {});
-        }
-    };
-    FileItem.prototype.cancel = function () {
-        this.uploader.cancelItem(this);
-    };
-    FileItem.prototype.remove = function () {
-        this.uploader.removeFromQueue(this);
-    };
-    FileItem.prototype.onBeforeUpload = function () {
-        return void 0;
-    };
-    FileItem.prototype.onBuildForm = function (form) {
-        return { form: form };
-    };
-    FileItem.prototype.onProgress = function (progress) {
-        return { progress: progress };
-    };
-    FileItem.prototype.onSuccess = function (response, status, headers) {
-        return { response: response, status: status, headers: headers };
-    };
-    FileItem.prototype.onError = function (response, status, headers) {
-        return { response: response, status: status, headers: headers };
-    };
-    FileItem.prototype.onCancel = function (response, status, headers) {
-        return { response: response, status: status, headers: headers };
-    };
-    FileItem.prototype.onComplete = function (response, status, headers) {
-        return { response: response, status: status, headers: headers };
-    };
-    FileItem.prototype._onBeforeUpload = function () {
-        this.isReady = true;
-        this.isUploading = true;
-        this.isUploaded = false;
-        this.isSuccess = false;
-        this.isCancel = false;
-        this.isError = false;
-        this.progress = 0;
-        this.onBeforeUpload();
-    };
-    FileItem.prototype._onBuildForm = function (form) {
-        this.onBuildForm(form);
-    };
-    FileItem.prototype._onProgress = function (progress) {
-        this.progress = progress;
-        this.onProgress(progress);
-    };
-    FileItem.prototype._onSuccess = function (response, status, headers) {
-        this.isReady = false;
-        this.isUploading = false;
-        this.isUploaded = true;
-        this.isSuccess = true;
-        this.isCancel = false;
-        this.isError = false;
-        this.progress = 100;
-        this.index = void 0;
-        this.onSuccess(response, status, headers);
-    };
-    FileItem.prototype._onError = function (response, status, headers) {
-        this.isReady = false;
-        this.isUploading = false;
-        this.isUploaded = true;
-        this.isSuccess = false;
-        this.isCancel = false;
-        this.isError = true;
-        this.progress = 0;
-        this.index = void 0;
-        this.onError(response, status, headers);
-    };
-    FileItem.prototype._onCancel = function (response, status, headers) {
-        this.isReady = false;
-        this.isUploading = false;
-        this.isUploaded = false;
-        this.isSuccess = false;
-        this.isCancel = true;
-        this.isError = false;
-        this.progress = 0;
-        this.index = void 0;
-        this.onCancel(response, status, headers);
-    };
-    FileItem.prototype._onComplete = function (response, status, headers) {
-        this.onComplete(response, status, headers);
-        if (this.uploader.options.removeAfterUpload) {
-            this.remove();
-        }
-    };
-    FileItem.prototype._prepareToUploading = function () {
-        this.index = this.index || ++this.uploader._nextIndex;
-        this.isReady = true;
-    };
-    return FileItem;
-}());
-exports.FileItem = FileItem;
-
-
-/***/ }),
-
-/***/ "../../../../ng2-file-upload/file-upload/file-like-object.class.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function isElement(node) {
-    return !!(node && (node.nodeName || node.prop && node.attr && node.find));
-}
-var FileLikeObject = (function () {
-    function FileLikeObject(fileOrInput) {
-        var isInput = isElement(fileOrInput);
-        var fakePathOrObject = isInput ? fileOrInput.value : fileOrInput;
-        var postfix = typeof fakePathOrObject === 'string' ? 'FakePath' : 'Object';
-        var method = '_createFrom' + postfix;
-        this[method](fakePathOrObject);
-    }
-    FileLikeObject.prototype._createFromFakePath = function (path) {
-        this.lastModifiedDate = void 0;
-        this.size = void 0;
-        this.type = 'like/' + path.slice(path.lastIndexOf('.') + 1).toLowerCase();
-        this.name = path.slice(path.lastIndexOf('/') + path.lastIndexOf('\\') + 2);
-    };
-    FileLikeObject.prototype._createFromObject = function (object) {
-        // this.lastModifiedDate = copy(object.lastModifiedDate);
-        this.size = object.size;
-        this.type = object.type;
-        this.name = object.name;
-    };
-    return FileLikeObject;
-}());
-exports.FileLikeObject = FileLikeObject;
-
-
-/***/ }),
-
-/***/ "../../../../ng2-file-upload/file-upload/file-select.directive.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var file_uploader_class_1 = __webpack_require__("../../../../ng2-file-upload/file-upload/file-uploader.class.js");
-// todo: filters
-var FileSelectDirective = (function () {
-    function FileSelectDirective(element) {
-        this.element = element;
-    }
-    FileSelectDirective.prototype.getOptions = function () {
-        return this.uploader.options;
-    };
-    FileSelectDirective.prototype.getFilters = function () {
-        return void 0;
-    };
-    FileSelectDirective.prototype.isEmptyAfterSelection = function () {
-        return !!this.element.nativeElement.attributes.multiple;
-    };
-    FileSelectDirective.prototype.onChange = function () {
-        // let files = this.uploader.isHTML5 ? this.element.nativeElement[0].files : this.element.nativeElement[0];
-        var files = this.element.nativeElement.files;
-        var options = this.getOptions();
-        var filters = this.getFilters();
-        // if(!this.uploader.isHTML5) this.destroy();
-        this.uploader.addToQueue(files, options, filters);
-        if (this.isEmptyAfterSelection()) {
-            // todo
-            this.element.nativeElement.value = '';
-        }
-    };
-    return FileSelectDirective;
-}());
-__decorate([
-    core_1.Input(),
-    __metadata("design:type", file_uploader_class_1.FileUploader)
-], FileSelectDirective.prototype, "uploader", void 0);
-__decorate([
-    core_1.HostListener('change'),
-    __metadata("design:type", Function),
-    __metadata("design:paramtypes", []),
-    __metadata("design:returntype", Object)
-], FileSelectDirective.prototype, "onChange", null);
-FileSelectDirective = __decorate([
-    core_1.Directive({ selector: '[ng2FileSelect]' }),
-    __metadata("design:paramtypes", [core_1.ElementRef])
-], FileSelectDirective);
-exports.FileSelectDirective = FileSelectDirective;
-
-
-/***/ }),
-
-/***/ "../../../../ng2-file-upload/file-upload/file-type.class.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var FileType = (function () {
-    function FileType() {
-    }
-    FileType.getMimeClass = function (file) {
-        var mimeClass = 'application';
-        if (this.mime_psd.indexOf(file.type) !== -1) {
-            mimeClass = 'image';
-        }
-        else if (file.type.match('image.*')) {
-            mimeClass = 'image';
-        }
-        else if (file.type.match('video.*')) {
-            mimeClass = 'video';
-        }
-        else if (file.type.match('audio.*')) {
-            mimeClass = 'audio';
-        }
-        else if (file.type === 'application/pdf') {
-            mimeClass = 'pdf';
-        }
-        else if (this.mime_compress.indexOf(file.type) !== -1) {
-            mimeClass = 'compress';
-        }
-        else if (this.mime_doc.indexOf(file.type) !== -1) {
-            mimeClass = 'doc';
-        }
-        else if (this.mime_xsl.indexOf(file.type) !== -1) {
-            mimeClass = 'xls';
-        }
-        else if (this.mime_ppt.indexOf(file.type) !== -1) {
-            mimeClass = 'ppt';
-        }
-        if (mimeClass === 'application') {
-            mimeClass = this.fileTypeDetection(file.name);
-        }
-        return mimeClass;
-    };
-    FileType.fileTypeDetection = function (inputFilename) {
-        var types = {
-            'jpg': 'image',
-            'jpeg': 'image',
-            'tif': 'image',
-            'psd': 'image',
-            'bmp': 'image',
-            'png': 'image',
-            'nef': 'image',
-            'tiff': 'image',
-            'cr2': 'image',
-            'dwg': 'image',
-            'cdr': 'image',
-            'ai': 'image',
-            'indd': 'image',
-            'pin': 'image',
-            'cdp': 'image',
-            'skp': 'image',
-            'stp': 'image',
-            '3dm': 'image',
-            'mp3': 'audio',
-            'wav': 'audio',
-            'wma': 'audio',
-            'mod': 'audio',
-            'm4a': 'audio',
-            'compress': 'compress',
-            'rar': 'compress',
-            '7z': 'compress',
-            'lz': 'compress',
-            'z01': 'compress',
-            'pdf': 'pdf',
-            'xls': 'xls',
-            'xlsx': 'xls',
-            'ods': 'xls',
-            'mp4': 'video',
-            'avi': 'video',
-            'wmv': 'video',
-            'mpg': 'video',
-            'mts': 'video',
-            'flv': 'video',
-            '3gp': 'video',
-            'vob': 'video',
-            'm4v': 'video',
-            'mpeg': 'video',
-            'm2ts': 'video',
-            'mov': 'video',
-            'doc': 'doc',
-            'docx': 'doc',
-            'eps': 'doc',
-            'txt': 'doc',
-            'odt': 'doc',
-            'rtf': 'doc',
-            'ppt': 'ppt',
-            'pptx': 'ppt',
-            'pps': 'ppt',
-            'ppsx': 'ppt',
-            'odp': 'ppt'
-        };
-        var chunks = inputFilename.split('.');
-        if (chunks.length < 2) {
-            return 'application';
-        }
-        var extension = chunks[chunks.length - 1].toLowerCase();
-        if (types[extension] === undefined) {
-            return 'application';
-        }
-        else {
-            return types[extension];
-        }
-    };
-    return FileType;
-}());
-/*  MS office  */
-FileType.mime_doc = [
-    'application/msword',
-    'application/msword',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.template',
-    'application/vnd.ms-word.document.macroEnabled.12',
-    'application/vnd.ms-word.template.macroEnabled.12'
-];
-FileType.mime_xsl = [
-    'application/vnd.ms-excel',
-    'application/vnd.ms-excel',
-    'application/vnd.ms-excel',
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet',
-    'application/vnd.openxmlformats-officedocument.spreadsheetml.template',
-    'application/vnd.ms-excel.sheet.macroEnabled.12',
-    'application/vnd.ms-excel.template.macroEnabled.12',
-    'application/vnd.ms-excel.addin.macroEnabled.12',
-    'application/vnd.ms-excel.sheet.binary.macroEnabled.12'
-];
-FileType.mime_ppt = [
-    'application/vnd.ms-powerpoint',
-    'application/vnd.ms-powerpoint',
-    'application/vnd.ms-powerpoint',
-    'application/vnd.ms-powerpoint',
-    'application/vnd.openxmlformats-officedocument.presentationml.presentation',
-    'application/vnd.openxmlformats-officedocument.presentationml.template',
-    'application/vnd.openxmlformats-officedocument.presentationml.slideshow',
-    'application/vnd.ms-powerpoint.addin.macroEnabled.12',
-    'application/vnd.ms-powerpoint.presentation.macroEnabled.12',
-    'application/vnd.ms-powerpoint.presentation.macroEnabled.12',
-    'application/vnd.ms-powerpoint.slideshow.macroEnabled.12'
-];
-/* PSD */
-FileType.mime_psd = [
-    'image/photoshop',
-    'image/x-photoshop',
-    'image/psd',
-    'application/photoshop',
-    'application/psd',
-    'zz-application/zz-winassoc-psd'
-];
-/* Compressed files */
-FileType.mime_compress = [
-    'application/x-gtar',
-    'application/x-gcompress',
-    'application/compress',
-    'application/x-tar',
-    'application/x-rar-compressed',
-    'application/octet-stream'
-];
-exports.FileType = FileType;
-
-
-/***/ }),
-
-/***/ "../../../../ng2-file-upload/file-upload/file-upload.module.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var common_1 = __webpack_require__("../../../common/@angular/common.es5.js");
-var core_1 = __webpack_require__("../../../core/@angular/core.es5.js");
-var file_drop_directive_1 = __webpack_require__("../../../../ng2-file-upload/file-upload/file-drop.directive.js");
-var file_select_directive_1 = __webpack_require__("../../../../ng2-file-upload/file-upload/file-select.directive.js");
-var FileUploadModule = (function () {
-    function FileUploadModule() {
-    }
-    return FileUploadModule;
-}());
-FileUploadModule = __decorate([
-    core_1.NgModule({
-        imports: [common_1.CommonModule],
-        declarations: [file_drop_directive_1.FileDropDirective, file_select_directive_1.FileSelectDirective],
-        exports: [file_drop_directive_1.FileDropDirective, file_select_directive_1.FileSelectDirective]
-    })
-], FileUploadModule);
-exports.FileUploadModule = FileUploadModule;
-
-
-/***/ }),
-
-/***/ "../../../../ng2-file-upload/file-upload/file-uploader.class.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-var file_like_object_class_1 = __webpack_require__("../../../../ng2-file-upload/file-upload/file-like-object.class.js");
-var file_item_class_1 = __webpack_require__("../../../../ng2-file-upload/file-upload/file-item.class.js");
-var file_type_class_1 = __webpack_require__("../../../../ng2-file-upload/file-upload/file-type.class.js");
-function isFile(value) {
-    return (File && value instanceof File);
-}
-var FileUploader = (function () {
-    function FileUploader(options) {
-        this.isUploading = false;
-        this.queue = [];
-        this.progress = 0;
-        this._nextIndex = 0;
-        this.options = {
-            autoUpload: false,
-            isHTML5: true,
-            filters: [],
-            removeAfterUpload: false,
-            disableMultipart: false
-        };
-        this.setOptions(options);
-    }
-    FileUploader.prototype.setOptions = function (options) {
-        this.options = Object.assign(this.options, options);
-        this.authToken = options.authToken;
-        this.authTokenHeader = options.authTokenHeader || 'Authorization';
-        this.autoUpload = options.autoUpload;
-        this.options.filters.unshift({ name: 'queueLimit', fn: this._queueLimitFilter });
-        if (this.options.maxFileSize) {
-            this.options.filters.unshift({ name: 'fileSize', fn: this._fileSizeFilter });
-        }
-        if (this.options.allowedFileType) {
-            this.options.filters.unshift({ name: 'fileType', fn: this._fileTypeFilter });
-        }
-        if (this.options.allowedMimeType) {
-            this.options.filters.unshift({ name: 'mimeType', fn: this._mimeTypeFilter });
-        }
-        for (var i = 0; i < this.queue.length; i++) {
-            this.queue[i].url = this.options.url;
-        }
-        // this.options.filters.unshift({name: 'folder', fn: this._folderFilter});
-    };
-    FileUploader.prototype.addToQueue = function (files, options, filters) {
-        var _this = this;
-        var list = [];
-        for (var _i = 0, files_1 = files; _i < files_1.length; _i++) {
-            var file = files_1[_i];
-            list.push(file);
-        }
-        var arrayOfFilters = this._getFilters(filters);
-        var count = this.queue.length;
-        var addedFileItems = [];
-        list.map(function (some) {
-            if (!options) {
-                options = _this.options;
-            }
-            var temp = new file_like_object_class_1.FileLikeObject(some);
-            if (_this._isValidFile(temp, arrayOfFilters, options)) {
-                var fileItem = new file_item_class_1.FileItem(_this, some, options);
-                addedFileItems.push(fileItem);
-                _this.queue.push(fileItem);
-                _this._onAfterAddingFile(fileItem);
-            }
-            else {
-                var filter = arrayOfFilters[_this._failFilterIndex];
-                _this._onWhenAddingFileFailed(temp, filter, options);
-            }
-        });
-        if (this.queue.length !== count) {
-            this._onAfterAddingAll(addedFileItems);
-            this.progress = this._getTotalProgress();
-        }
-        this._render();
-        if (this.options.autoUpload) {
-            this.uploadAll();
-        }
-    };
-    FileUploader.prototype.removeFromQueue = function (value) {
-        var index = this.getIndexOfItem(value);
-        var item = this.queue[index];
-        if (item.isUploading) {
-            item.cancel();
-        }
-        this.queue.splice(index, 1);
-        this.progress = this._getTotalProgress();
-    };
-    FileUploader.prototype.clearQueue = function () {
-        while (this.queue.length) {
-            this.queue[0].remove();
-        }
-        this.progress = 0;
-    };
-    FileUploader.prototype.uploadItem = function (value) {
-        var index = this.getIndexOfItem(value);
-        var item = this.queue[index];
-        var transport = this.options.isHTML5 ? '_xhrTransport' : '_iframeTransport';
-        item._prepareToUploading();
-        if (this.isUploading) {
-            return;
-        }
-        this.isUploading = true;
-        this[transport](item);
-    };
-    FileUploader.prototype.cancelItem = function (value) {
-        var index = this.getIndexOfItem(value);
-        var item = this.queue[index];
-        var prop = this.options.isHTML5 ? item._xhr : item._form;
-        if (item && item.isUploading) {
-            prop.abort();
-        }
-    };
-    FileUploader.prototype.uploadAll = function () {
-        var items = this.getNotUploadedItems().filter(function (item) { return !item.isUploading; });
-        if (!items.length) {
-            return;
-        }
-        items.map(function (item) { return item._prepareToUploading(); });
-        items[0].upload();
-    };
-    FileUploader.prototype.cancelAll = function () {
-        var items = this.getNotUploadedItems();
-        items.map(function (item) { return item.cancel(); });
-    };
-    FileUploader.prototype.isFile = function (value) {
-        return isFile(value);
-    };
-    FileUploader.prototype.isFileLikeObject = function (value) {
-        return value instanceof file_like_object_class_1.FileLikeObject;
-    };
-    FileUploader.prototype.getIndexOfItem = function (value) {
-        return typeof value === 'number' ? value : this.queue.indexOf(value);
-    };
-    FileUploader.prototype.getNotUploadedItems = function () {
-        return this.queue.filter(function (item) { return !item.isUploaded; });
-    };
-    FileUploader.prototype.getReadyItems = function () {
-        return this.queue
-            .filter(function (item) { return (item.isReady && !item.isUploading); })
-            .sort(function (item1, item2) { return item1.index - item2.index; });
-    };
-    FileUploader.prototype.destroy = function () {
-        return void 0;
-        /*forEach(this._directives, (key) => {
-         forEach(this._directives[key], (object) => {
-         object.destroy();
-         });
-         });*/
-    };
-    FileUploader.prototype.onAfterAddingAll = function (fileItems) {
-        return { fileItems: fileItems };
-    };
-    FileUploader.prototype.onBuildItemForm = function (fileItem, form) {
-        return { fileItem: fileItem, form: form };
-    };
-    FileUploader.prototype.onAfterAddingFile = function (fileItem) {
-        return { fileItem: fileItem };
-    };
-    FileUploader.prototype.onWhenAddingFileFailed = function (item, filter, options) {
-        return { item: item, filter: filter, options: options };
-    };
-    FileUploader.prototype.onBeforeUploadItem = function (fileItem) {
-        return { fileItem: fileItem };
-    };
-    FileUploader.prototype.onProgressItem = function (fileItem, progress) {
-        return { fileItem: fileItem, progress: progress };
-    };
-    FileUploader.prototype.onProgressAll = function (progress) {
-        return { progress: progress };
-    };
-    FileUploader.prototype.onSuccessItem = function (item, response, status, headers) {
-        return { item: item, response: response, status: status, headers: headers };
-    };
-    FileUploader.prototype.onErrorItem = function (item, response, status, headers) {
-        return { item: item, response: response, status: status, headers: headers };
-    };
-    FileUploader.prototype.onCancelItem = function (item, response, status, headers) {
-        return { item: item, response: response, status: status, headers: headers };
-    };
-    FileUploader.prototype.onCompleteItem = function (item, response, status, headers) {
-        return { item: item, response: response, status: status, headers: headers };
-    };
-    FileUploader.prototype.onCompleteAll = function () {
-        return void 0;
-    };
-    FileUploader.prototype._mimeTypeFilter = function (item) {
-        return !(this.options.allowedMimeType && this.options.allowedMimeType.indexOf(item.type) === -1);
-    };
-    FileUploader.prototype._fileSizeFilter = function (item) {
-        return !(this.options.maxFileSize && item.size > this.options.maxFileSize);
-    };
-    FileUploader.prototype._fileTypeFilter = function (item) {
-        return !(this.options.allowedFileType &&
-            this.options.allowedFileType.indexOf(file_type_class_1.FileType.getMimeClass(item)) === -1);
-    };
-    FileUploader.prototype._onErrorItem = function (item, response, status, headers) {
-        item._onError(response, status, headers);
-        this.onErrorItem(item, response, status, headers);
-    };
-    FileUploader.prototype._onCompleteItem = function (item, response, status, headers) {
-        item._onComplete(response, status, headers);
-        this.onCompleteItem(item, response, status, headers);
-        var nextItem = this.getReadyItems()[0];
-        this.isUploading = false;
-        if (nextItem) {
-            nextItem.upload();
-            return;
-        }
-        this.onCompleteAll();
-        this.progress = this._getTotalProgress();
-        this._render();
-    };
-    FileUploader.prototype._headersGetter = function (parsedHeaders) {
-        return function (name) {
-            if (name) {
-                return parsedHeaders[name.toLowerCase()] || void 0;
-            }
-            return parsedHeaders;
-        };
-    };
-    FileUploader.prototype._xhrTransport = function (item) {
-        var _this = this;
-        var xhr = item._xhr = new XMLHttpRequest();
-        var sendable;
-        this._onBeforeUploadItem(item);
-        // todo
-        /*item.formData.map(obj => {
-         obj.map((value, key) => {
-         form.append(key, value);
-         });
-         });*/
-        if (typeof item._file.size !== 'number') {
-            throw new TypeError('The file specified is no longer valid');
-        }
-        if (!this.options.disableMultipart) {
-            sendable = new FormData();
-            this._onBuildItemForm(item, sendable);
-            sendable.append(item.alias, item._file, item.file.name);
-            if (this.options.additionalParameter !== undefined) {
-                Object.keys(this.options.additionalParameter).forEach(function (key) {
-                    sendable.append(key, _this.options.additionalParameter[key]);
-                });
-            }
-        }
-        else {
-            sendable = item._file;
-        }
-        xhr.upload.onprogress = function (event) {
-            var progress = Math.round(event.lengthComputable ? event.loaded * 100 / event.total : 0);
-            _this._onProgressItem(item, progress);
-        };
-        xhr.onload = function () {
-            var headers = _this._parseHeaders(xhr.getAllResponseHeaders());
-            var response = _this._transformResponse(xhr.response, headers);
-            var gist = _this._isSuccessCode(xhr.status) ? 'Success' : 'Error';
-            var method = '_on' + gist + 'Item';
-            _this[method](item, response, xhr.status, headers);
-            _this._onCompleteItem(item, response, xhr.status, headers);
-        };
-        xhr.onerror = function () {
-            var headers = _this._parseHeaders(xhr.getAllResponseHeaders());
-            var response = _this._transformResponse(xhr.response, headers);
-            _this._onErrorItem(item, response, xhr.status, headers);
-            _this._onCompleteItem(item, response, xhr.status, headers);
-        };
-        xhr.onabort = function () {
-            var headers = _this._parseHeaders(xhr.getAllResponseHeaders());
-            var response = _this._transformResponse(xhr.response, headers);
-            _this._onCancelItem(item, response, xhr.status, headers);
-            _this._onCompleteItem(item, response, xhr.status, headers);
-        };
-        xhr.open(item.method, item.url, true);
-        xhr.withCredentials = item.withCredentials;
-        if (this.options.headers) {
-            for (var _i = 0, _a = this.options.headers; _i < _a.length; _i++) {
-                var header = _a[_i];
-                xhr.setRequestHeader(header.name, header.value);
-            }
-        }
-        if (item.headers.length) {
-            for (var _b = 0, _c = item.headers; _b < _c.length; _b++) {
-                var header = _c[_b];
-                xhr.setRequestHeader(header.name, header.value);
-            }
-        }
-        if (this.authToken) {
-            xhr.setRequestHeader(this.authTokenHeader, this.authToken);
-        }
-        xhr.send(sendable);
-        this._render();
-    };
-    FileUploader.prototype._getTotalProgress = function (value) {
-        if (value === void 0) { value = 0; }
-        if (this.options.removeAfterUpload) {
-            return value;
-        }
-        var notUploaded = this.getNotUploadedItems().length;
-        var uploaded = notUploaded ? this.queue.length - notUploaded : this.queue.length;
-        var ratio = 100 / this.queue.length;
-        var current = value * ratio / 100;
-        return Math.round(uploaded * ratio + current);
-    };
-    FileUploader.prototype._getFilters = function (filters) {
-        if (!filters) {
-            return this.options.filters;
-        }
-        if (Array.isArray(filters)) {
-            return filters;
-        }
-        if (typeof filters === 'string') {
-            var names_1 = filters.match(/[^\s,]+/g);
-            return this.options.filters
-                .filter(function (filter) { return names_1.indexOf(filter.name) !== -1; });
-        }
-        return this.options.filters;
-    };
-    FileUploader.prototype._render = function () {
-        return void 0;
-        // todo: ?
-    };
-    // protected _folderFilter(item:FileItem):boolean {
-    //   return !!(item.size || item.type);
-    // }
-    FileUploader.prototype._queueLimitFilter = function () {
-        return this.options.queueLimit === undefined || this.queue.length < this.options.queueLimit;
-    };
-    FileUploader.prototype._isValidFile = function (file, filters, options) {
-        var _this = this;
-        this._failFilterIndex = -1;
-        return !filters.length ? true : filters.every(function (filter) {
-            _this._failFilterIndex++;
-            return filter.fn.call(_this, file, options);
-        });
-    };
-    FileUploader.prototype._isSuccessCode = function (status) {
-        return (status >= 200 && status < 300) || status === 304;
-    };
-    /* tslint:disable */
-    FileUploader.prototype._transformResponse = function (response, headers) {
-        // todo: ?
-        /*var headersGetter = this._headersGetter(headers);
-         forEach($http.defaults.transformResponse, (transformFn) => {
-         response = transformFn(response, headersGetter);
-         });*/
-        return response;
-    };
-    /* tslint:enable */
-    FileUploader.prototype._parseHeaders = function (headers) {
-        var parsed = {};
-        var key;
-        var val;
-        var i;
-        if (!headers) {
-            return parsed;
-        }
-        headers.split('\n').map(function (line) {
-            i = line.indexOf(':');
-            key = line.slice(0, i).trim().toLowerCase();
-            val = line.slice(i + 1).trim();
-            if (key) {
-                parsed[key] = parsed[key] ? parsed[key] + ', ' + val : val;
-            }
-        });
-        return parsed;
-    };
-    /*protected _iframeTransport(item:FileItem) {
-     // todo: implement it later
-     }*/
-    FileUploader.prototype._onWhenAddingFileFailed = function (item, filter, options) {
-        this.onWhenAddingFileFailed(item, filter, options);
-    };
-    FileUploader.prototype._onAfterAddingFile = function (item) {
-        this.onAfterAddingFile(item);
-    };
-    FileUploader.prototype._onAfterAddingAll = function (items) {
-        this.onAfterAddingAll(items);
-    };
-    FileUploader.prototype._onBeforeUploadItem = function (item) {
-        item._onBeforeUpload();
-        this.onBeforeUploadItem(item);
-    };
-    FileUploader.prototype._onBuildItemForm = function (item, form) {
-        item._onBuildForm(form);
-        this.onBuildItemForm(item, form);
-    };
-    FileUploader.prototype._onProgressItem = function (item, progress) {
-        var total = this._getTotalProgress(progress);
-        this.progress = total;
-        item._onProgress(progress);
-        this.onProgressItem(item, progress);
-        this.onProgressAll(total);
-        this._render();
-    };
-    /* tslint:disable */
-    FileUploader.prototype._onSuccessItem = function (item, response, status, headers) {
-        item._onSuccess(response, status, headers);
-        this.onSuccessItem(item, response, status, headers);
-    };
-    /* tslint:enable */
-    FileUploader.prototype._onCancelItem = function (item, response, status, headers) {
-        item._onCancel(response, status, headers);
-        this.onCancelItem(item, response, status, headers);
-    };
-    return FileUploader;
-}());
-exports.FileUploader = FileUploader;
-
-
-/***/ }),
-
-/***/ "../../../../ng2-file-upload/index.js":
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-function __export(m) {
-    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
-}
-__export(__webpack_require__("../../../../ng2-file-upload/file-upload/file-select.directive.js"));
-__export(__webpack_require__("../../../../ng2-file-upload/file-upload/file-drop.directive.js"));
-__export(__webpack_require__("../../../../ng2-file-upload/file-upload/file-uploader.class.js"));
-__export(__webpack_require__("../../../../ng2-file-upload/file-upload/file-item.class.js"));
-__export(__webpack_require__("../../../../ng2-file-upload/file-upload/file-like-object.class.js"));
-var file_upload_module_1 = __webpack_require__("../../../../ng2-file-upload/file-upload/file-upload.module.js");
-exports.FileUploadModule = file_upload_module_1.FileUploadModule;
-
 
 /***/ }),
 
@@ -1723,7 +646,7 @@ function isEmptyInputValue(value) {
  *
  * \@stable
  */
-var NG_VALIDATORS = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["InjectionToken"]('NgValidators');
+var NG_VALIDATORS = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* InjectionToken */]('NgValidators');
 /**
  * Providers for asynchronous validators to be used for {\@link FormControl}s
  * in a form.
@@ -1734,7 +657,7 @@ var NG_VALIDATORS = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["InjectionTo
  *
  * \@stable
  */
-var NG_ASYNC_VALIDATORS = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["InjectionToken"]('NgAsyncValidators');
+var NG_ASYNC_VALIDATORS = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* InjectionToken */]('NgAsyncValidators');
 var EMAIL_REGEXP = /^(?=.{1,254}$)(?=.{1,64}@)[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+(\.[-!#$%&'*+/0-9=?A-Z^_`a-z{|}~]+)*@[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?(\.[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?)*$/;
 /**
  * Provides a set of validators used by form controls.
@@ -1914,8 +837,8 @@ function isPresent(o) {
  * @return {?}
  */
 function toObservable(r) {
-    var /** @type {?} */ obs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ɵisPromise"])(r) ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise__["fromPromise"])(r) : r;
-    if (!(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ɵisObservable"])(obs))) {
+    var /** @type {?} */ obs = __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["g" /* ɵisPromise */])(r) ? __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_3_rxjs_observable_fromPromise__["fromPromise"])(r) : r;
+    if (!(__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["f" /* ɵisObservable */])(obs))) {
         throw new Error("Expected validator to return Promise or Observable.");
     }
     return obs;
@@ -1959,7 +882,7 @@ function _mergeErrors(arrayOfErrors) {
  * See {\@link DefaultValueAccessor} for how to implement one.
  * \@stable
  */
-var NG_VALUE_ACCESSOR = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["InjectionToken"]('NgValueAccessor');
+var NG_VALUE_ACCESSOR = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* InjectionToken */]('NgValueAccessor');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -1969,7 +892,7 @@ var NG_VALUE_ACCESSOR = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injecti
  */
 var CHECKBOX_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return CheckboxControlValueAccessor; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return CheckboxControlValueAccessor; }),
     multi: true,
 };
 /**
@@ -2020,7 +943,7 @@ var CheckboxControlValueAccessor = (function () {
     return CheckboxControlValueAccessor;
 }());
 CheckboxControlValueAccessor.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: 'input[type=checkbox][formControlName],input[type=checkbox][formControl],input[type=checkbox][ngModel]',
                 host: { '(change)': 'onChange($event.target.checked)', '(blur)': 'onTouched()' },
                 providers: [CHECKBOX_VALUE_ACCESSOR]
@@ -2030,8 +953,8 @@ CheckboxControlValueAccessor.decorators = [
  * @nocollapse
  */
 CheckboxControlValueAccessor.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer"], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Renderer */], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* ElementRef */], },
 ]; };
 /**
  * @license
@@ -2042,7 +965,7 @@ CheckboxControlValueAccessor.ctorParameters = function () { return [
  */
 var DEFAULT_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return DefaultValueAccessor; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return DefaultValueAccessor; }),
     multi: true
 };
 /**
@@ -2058,7 +981,7 @@ function _isAndroid() {
  * Turn this mode on if you want form directives to buffer IME input until compositionend
  * \@experimental
  */
-var COMPOSITION_BUFFER_MODE = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["InjectionToken"]('CompositionEventMode');
+var COMPOSITION_BUFFER_MODE = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["i" /* InjectionToken */]('CompositionEventMode');
 /**
  * The default accessor for writing a value and listening to changes that is used by the
  * {\@link NgModel}, {\@link FormControlDirective}, and {\@link FormControlName} directives.
@@ -2139,7 +1062,7 @@ var DefaultValueAccessor = (function () {
     return DefaultValueAccessor;
 }());
 DefaultValueAccessor.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: 'input:not([type=checkbox])[formControlName],textarea[formControlName],input:not([type=checkbox])[formControl],textarea[formControl],input:not([type=checkbox])[ngModel],textarea[ngModel],[ngDefaultControl]',
                 // TODO: vsavkin replace the above selector with the one below it once
                 // https://github.com/angular/angular/issues/3011 is implemented
@@ -2157,9 +1080,9 @@ DefaultValueAccessor.decorators = [
  * @nocollapse
  */
 DefaultValueAccessor.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer"], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
-    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [COMPOSITION_BUFFER_MODE,] },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Renderer */], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* ElementRef */], },
+    { type: undefined, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [COMPOSITION_BUFFER_MODE,] },] },
 ]; };
 /**
  * @license
@@ -2201,7 +1124,7 @@ function normalizeAsyncValidator(validator) {
  */
 var NUMBER_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return NumberValueAccessor; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return NumberValueAccessor; }),
     multi: true
 };
 /**
@@ -2255,7 +1178,7 @@ var NumberValueAccessor = (function () {
     return NumberValueAccessor;
 }());
 NumberValueAccessor.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: 'input[type=number][formControlName],input[type=number][formControl],input[type=number][ngModel]',
                 host: {
                     '(change)': 'onChange($event.target.value)',
@@ -2269,8 +1192,8 @@ NumberValueAccessor.decorators = [
  * @nocollapse
  */
 NumberValueAccessor.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer"], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Renderer */], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* ElementRef */], },
 ]; };
 /**
  * @license
@@ -2347,7 +1270,7 @@ var NgControl = (function (_super) {
  */
 var RADIO_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return RadioControlValueAccessor; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return RadioControlValueAccessor; }),
     multi: true
 };
 /**
@@ -2403,7 +1326,7 @@ var RadioControlRegistry = (function () {
     return RadioControlRegistry;
 }());
 RadioControlRegistry.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -2521,7 +1444,7 @@ var RadioControlValueAccessor = (function () {
     return RadioControlValueAccessor;
 }());
 RadioControlValueAccessor.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: 'input[type=radio][formControlName],input[type=radio][formControl],input[type=radio][ngModel]',
                 host: { '(change)': 'onChange()', '(blur)': 'onTouched()' },
                 providers: [RADIO_VALUE_ACCESSOR]
@@ -2531,15 +1454,15 @@ RadioControlValueAccessor.decorators = [
  * @nocollapse
  */
 RadioControlValueAccessor.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer"], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Renderer */], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* ElementRef */], },
     { type: RadioControlRegistry, },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injector"], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["A" /* Injector */], },
 ]; };
 RadioControlValueAccessor.propDecorators = {
-    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
-    'formControlName': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
-    'value': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */] },],
+    'formControlName': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */] },],
+    'value': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */] },],
 };
 /**
  * @license
@@ -2550,7 +1473,7 @@ RadioControlValueAccessor.propDecorators = {
  */
 var RANGE_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return RangeValueAccessor; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return RangeValueAccessor; }),
     multi: true
 };
 /**
@@ -2602,7 +1525,7 @@ var RangeValueAccessor = (function () {
     return RangeValueAccessor;
 }());
 RangeValueAccessor.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: 'input[type=range][formControlName],input[type=range][formControl],input[type=range][ngModel]',
                 host: {
                     '(change)': 'onChange($event.target.value)',
@@ -2616,8 +1539,8 @@ RangeValueAccessor.decorators = [
  * @nocollapse
  */
 RangeValueAccessor.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer"], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Renderer */], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* ElementRef */], },
 ]; };
 /**
  * @license
@@ -2628,7 +1551,7 @@ RangeValueAccessor.ctorParameters = function () { return [
  */
 var SELECT_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return SelectControlValueAccessor; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return SelectControlValueAccessor; }),
     multi: true
 };
 /**
@@ -2731,7 +1654,7 @@ var SelectControlValueAccessor = (function () {
         this._idCounter = 0;
         this.onChange = function (_) { };
         this.onTouched = function () { };
-        this._compareWith = __WEBPACK_IMPORTED_MODULE_1__angular_core__["ɵlooseIdentical"];
+        this._compareWith = __WEBPACK_IMPORTED_MODULE_1__angular_core__["U" /* ɵlooseIdentical */];
     }
     Object.defineProperty(SelectControlValueAccessor.prototype, "compareWith", {
         /**
@@ -2813,7 +1736,7 @@ var SelectControlValueAccessor = (function () {
     return SelectControlValueAccessor;
 }());
 SelectControlValueAccessor.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: 'select:not([multiple])[formControlName],select:not([multiple])[formControl],select:not([multiple])[ngModel]',
                 host: { '(change)': 'onChange($event.target.value)', '(blur)': 'onTouched()' },
                 providers: [SELECT_VALUE_ACCESSOR]
@@ -2823,11 +1746,11 @@ SelectControlValueAccessor.decorators = [
  * @nocollapse
  */
 SelectControlValueAccessor.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer"], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Renderer */], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* ElementRef */], },
 ]; };
 SelectControlValueAccessor.propDecorators = {
-    'compareWith': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+    'compareWith': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */] },],
 };
 /**
  * \@whatItDoes Marks `<option>` as dynamic, so Angular can be notified when options change.
@@ -2899,19 +1822,19 @@ var NgSelectOption = (function () {
     return NgSelectOption;
 }());
 NgSelectOption.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{ selector: 'option' },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{ selector: 'option' },] },
 ];
 /**
  * @nocollapse
  */
 NgSelectOption.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer"], },
-    { type: SelectControlValueAccessor, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Host"] },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* ElementRef */], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Renderer */], },
+    { type: SelectControlValueAccessor, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* Host */] },] },
 ]; };
 NgSelectOption.propDecorators = {
-    'ngValue': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['ngValue',] },],
-    'value': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['value',] },],
+    'ngValue': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['ngValue',] },],
+    'value': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['value',] },],
 };
 /**
  * @license
@@ -2922,7 +1845,7 @@ NgSelectOption.propDecorators = {
  */
 var SELECT_MULTIPLE_VALUE_ACCESSOR = {
     provide: NG_VALUE_ACCESSOR,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return SelectMultipleControlValueAccessor; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return SelectMultipleControlValueAccessor; }),
     multi: true
 };
 /**
@@ -2994,7 +1917,7 @@ var SelectMultipleControlValueAccessor = (function () {
         this._idCounter = 0;
         this.onChange = function (_) { };
         this.onTouched = function () { };
-        this._compareWith = __WEBPACK_IMPORTED_MODULE_1__angular_core__["ɵlooseIdentical"];
+        this._compareWith = __WEBPACK_IMPORTED_MODULE_1__angular_core__["U" /* ɵlooseIdentical */];
     }
     Object.defineProperty(SelectMultipleControlValueAccessor.prototype, "compareWith", {
         /**
@@ -3105,7 +2028,7 @@ var SelectMultipleControlValueAccessor = (function () {
     return SelectMultipleControlValueAccessor;
 }());
 SelectMultipleControlValueAccessor.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: 'select[multiple][formControlName],select[multiple][formControl],select[multiple][ngModel]',
                 host: { '(change)': 'onChange($event.target)', '(blur)': 'onTouched()' },
                 providers: [SELECT_MULTIPLE_VALUE_ACCESSOR]
@@ -3115,11 +2038,11 @@ SelectMultipleControlValueAccessor.decorators = [
  * @nocollapse
  */
 SelectMultipleControlValueAccessor.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer"], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Renderer */], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* ElementRef */], },
 ]; };
 SelectMultipleControlValueAccessor.propDecorators = {
-    'compareWith': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+    'compareWith': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */] },],
 };
 /**
  * Marks `<option>` as dynamic, so Angular can be notified when options change.
@@ -3207,19 +2130,19 @@ var NgSelectMultipleOption = (function () {
     return NgSelectMultipleOption;
 }());
 NgSelectMultipleOption.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{ selector: 'option' },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{ selector: 'option' },] },
 ];
 /**
  * @nocollapse
  */
 NgSelectMultipleOption.ctorParameters = function () { return [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["ElementRef"], },
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Renderer"], },
-    { type: SelectMultipleControlValueAccessor, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Host"] },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["o" /* ElementRef */], },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["n" /* Renderer */], },
+    { type: SelectMultipleControlValueAccessor, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* Host */] },] },
 ]; };
 NgSelectMultipleOption.propDecorators = {
-    'ngValue': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['ngValue',] },],
-    'value': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['value',] },],
+    'ngValue': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['ngValue',] },],
+    'value': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['value',] },],
 };
 /**
  * @license
@@ -3363,7 +2286,7 @@ function isPropertyUpdated(changes, viewModel) {
     var /** @type {?} */ change = changes['model'];
     if (change.isFirstChange())
         return true;
-    return !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["ɵlooseIdentical"])(viewModel, change.currentValue);
+    return !__webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["U" /* ɵlooseIdentical */])(viewModel, change.currentValue);
 }
 var BUILTIN_ACCESSORS = [
     CheckboxControlValueAccessor,
@@ -3597,13 +2520,13 @@ var NgControlStatus = (function (_super) {
     return NgControlStatus;
 }(AbstractControlStatus));
 NgControlStatus.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{ selector: '[formControlName],[ngModel],[formControl]', host: ngControlStatusHost },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{ selector: '[formControlName],[ngModel],[formControl]', host: ngControlStatusHost },] },
 ];
 /**
  * @nocollapse
  */
 NgControlStatus.ctorParameters = function () { return [
-    { type: NgControl, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] },] },
+    { type: NgControl, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] },] },
 ]; };
 /**
  * Directive automatically applied to Angular form groups that sets CSS classes
@@ -3622,7 +2545,7 @@ var NgControlStatusGroup = (function (_super) {
     return NgControlStatusGroup;
 }(AbstractControlStatus));
 NgControlStatusGroup.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: '[formGroupName],[formArrayName],[ngModelGroup],[formGroup],form:not([ngNoForm]),[ngForm]',
                 host: ngControlStatusHost
             },] },
@@ -3631,7 +2554,7 @@ NgControlStatusGroup.decorators = [
  * @nocollapse
  */
 NgControlStatusGroup.ctorParameters = function () { return [
-    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] },] },
+    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] },] },
 ]; };
 /**
  * @license
@@ -4255,8 +3178,8 @@ var AbstractControl = (function () {
      * @return {?}
      */
     AbstractControl.prototype._initObservables = function () {
-        this._valueChanges = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["EventEmitter"]();
-        this._statusChanges = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["EventEmitter"]();
+        this._valueChanges = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* EventEmitter */]();
+        this._statusChanges = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* EventEmitter */]();
     };
     /**
      * @return {?}
@@ -5266,7 +4189,7 @@ var FormArray = (function (_super) {
  */
 var formDirectiveProvider = {
     provide: ControlContainer,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return NgForm; })
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return NgForm; })
 };
 var resolvedPromise = Promise.resolve(null);
 /**
@@ -5309,7 +4232,7 @@ var NgForm = (function (_super) {
     function NgForm(validators, asyncValidators) {
         var _this = _super.call(this) || this;
         _this._submitted = false;
-        _this.ngSubmit = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["EventEmitter"]();
+        _this.ngSubmit = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* EventEmitter */]();
         _this.form =
             new FormGroup({}, composeValidators(validators), composeAsyncValidators(asyncValidators));
         return _this;
@@ -5468,7 +4391,7 @@ var NgForm = (function (_super) {
     return NgForm;
 }(ControlContainer));
 NgForm.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: 'form:not([ngNoForm]):not([formGroup]),ngForm,[ngForm]',
                 providers: [formDirectiveProvider],
                 host: { '(submit)': 'onSubmit($event)', '(reset)': 'onReset()' },
@@ -5480,8 +4403,8 @@ NgForm.decorators = [
  * @nocollapse
  */
 NgForm.ctorParameters = function () { return [
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
 ]; };
 /**
  * @license
@@ -5542,7 +4465,7 @@ var TemplateDrivenErrors = (function () {
  */
 var modelGroupProvider = {
     provide: ControlContainer,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return NgModelGroup; })
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return NgModelGroup; })
 };
 /**
  * \@whatItDoes Creates and binds a {\@link FormGroup} instance to a DOM element.
@@ -5595,18 +4518,18 @@ var NgModelGroup = (function (_super) {
     return NgModelGroup;
 }(AbstractFormGroupDirective));
 NgModelGroup.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{ selector: '[ngModelGroup]', providers: [modelGroupProvider], exportAs: 'ngModelGroup' },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{ selector: '[ngModelGroup]', providers: [modelGroupProvider], exportAs: 'ngModelGroup' },] },
 ];
 /**
  * @nocollapse
  */
 NgModelGroup.ctorParameters = function () { return [
-    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Host"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["SkipSelf"] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["F" /* SkipSelf */] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
 ]; };
 NgModelGroup.propDecorators = {
-    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['ngModelGroup',] },],
+    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['ngModelGroup',] },],
 };
 /**
  * @license
@@ -5617,7 +4540,7 @@ NgModelGroup.propDecorators = {
  */
 var formControlBinding = {
     provide: NgControl,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return NgModel; })
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return NgModel; })
 };
 /**
  * `ngModel` forces an additional change detection run when its inputs change:
@@ -5713,7 +4636,7 @@ var NgModel = (function (_super) {
          * \@internal
          */
         _this._registered = false;
-        _this.update = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["EventEmitter"]();
+        _this.update = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* EventEmitter */]();
         _this._parent = parent;
         _this._rawValidators = validators || [];
         _this._rawAsyncValidators = asyncValidators || [];
@@ -5872,7 +4795,7 @@ var NgModel = (function (_super) {
     return NgModel;
 }(NgControl));
 NgModel.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: '[ngModel]:not([formControlName]):not([formControl])',
                 providers: [formControlBinding],
                 exportAs: 'ngModel'
@@ -5882,17 +4805,17 @@ NgModel.decorators = [
  * @nocollapse
  */
 NgModel.ctorParameters = function () { return [
-    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Host"] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_ASYNC_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_VALUE_ACCESSOR,] },] },
+    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* Host */] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_VALUE_ACCESSOR,] },] },
 ]; };
 NgModel.propDecorators = {
-    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
-    'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['disabled',] },],
-    'model': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['ngModel',] },],
-    'options': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['ngModelOptions',] },],
-    'update': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Output"], args: ['ngModelChange',] },],
+    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */] },],
+    'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['disabled',] },],
+    'model': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['ngModel',] },],
+    'options': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['ngModelOptions',] },],
+    'update': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["x" /* Output */], args: ['ngModelChange',] },],
 };
 /**
  * @license
@@ -5951,7 +4874,7 @@ var ReactiveErrors = (function () {
  */
 var formControlBinding$1 = {
     provide: NgControl,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return FormControlDirective; })
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return FormControlDirective; })
 };
 /**
  * \@whatItDoes Syncs a standalone {\@link FormControl} instance to a form control element.
@@ -6004,7 +4927,7 @@ var FormControlDirective = (function (_super) {
      */
     function FormControlDirective(validators, asyncValidators, valueAccessors) {
         var _this = _super.call(this) || this;
-        _this.update = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["EventEmitter"]();
+        _this.update = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* EventEmitter */]();
         _this._rawValidators = validators || [];
         _this._rawAsyncValidators = asyncValidators || [];
         _this.valueAccessor = selectValueAccessor(_this, valueAccessors);
@@ -6088,21 +5011,21 @@ var FormControlDirective = (function (_super) {
     return FormControlDirective;
 }(NgControl));
 FormControlDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{ selector: '[formControl]', providers: [formControlBinding$1], exportAs: 'ngForm' },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{ selector: '[formControl]', providers: [formControlBinding$1], exportAs: 'ngForm' },] },
 ];
 /**
  * @nocollapse
  */
 FormControlDirective.ctorParameters = function () { return [
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_ASYNC_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_VALUE_ACCESSOR,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_VALUE_ACCESSOR,] },] },
 ]; };
 FormControlDirective.propDecorators = {
-    'form': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['formControl',] },],
-    'model': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['ngModel',] },],
-    'update': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Output"], args: ['ngModelChange',] },],
-    'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['disabled',] },],
+    'form': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['formControl',] },],
+    'model': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['ngModel',] },],
+    'update': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["x" /* Output */], args: ['ngModelChange',] },],
+    'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['disabled',] },],
 };
 /**
  * @license
@@ -6113,7 +5036,7 @@ FormControlDirective.propDecorators = {
  */
 var formDirectiveProvider$1 = {
     provide: ControlContainer,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return FormGroupDirective; })
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return FormGroupDirective; })
 };
 /**
  * \@whatItDoes Binds an existing {\@link FormGroup} to a DOM element.
@@ -6163,7 +5086,7 @@ var FormGroupDirective = (function (_super) {
         _this._submitted = false;
         _this.directives = [];
         _this.form = ((null));
-        _this.ngSubmit = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["EventEmitter"]();
+        _this.ngSubmit = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* EventEmitter */]();
         return _this;
     }
     /**
@@ -6347,7 +5270,7 @@ var FormGroupDirective = (function (_super) {
     return FormGroupDirective;
 }(ControlContainer));
 FormGroupDirective.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: '[formGroup]',
                 providers: [formDirectiveProvider$1],
                 host: { '(submit)': 'onSubmit($event)', '(reset)': 'onReset()' },
@@ -6358,12 +5281,12 @@ FormGroupDirective.decorators = [
  * @nocollapse
  */
 FormGroupDirective.ctorParameters = function () { return [
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
 ]; };
 FormGroupDirective.propDecorators = {
-    'form': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['formGroup',] },],
-    'ngSubmit': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Output"] },],
+    'form': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['formGroup',] },],
+    'ngSubmit': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["x" /* Output */] },],
 };
 /**
  * @template T
@@ -6386,7 +5309,7 @@ function remove(list, el) {
  */
 var formGroupNameProvider = {
     provide: ControlContainer,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return FormGroupName; })
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return FormGroupName; })
 };
 /**
  * \@whatItDoes Syncs a nested {\@link FormGroup} to a DOM element.
@@ -6458,22 +5381,22 @@ var FormGroupName = (function (_super) {
     return FormGroupName;
 }(AbstractFormGroupDirective));
 FormGroupName.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{ selector: '[formGroupName]', providers: [formGroupNameProvider] },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{ selector: '[formGroupName]', providers: [formGroupNameProvider] },] },
 ];
 /**
  * @nocollapse
  */
 FormGroupName.ctorParameters = function () { return [
-    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Host"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["SkipSelf"] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["F" /* SkipSelf */] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
 ]; };
 FormGroupName.propDecorators = {
-    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['formGroupName',] },],
+    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['formGroupName',] },],
 };
 var formArrayNameProvider = {
     provide: ControlContainer,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return FormArrayName; })
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return FormArrayName; })
 };
 /**
  * \@whatItDoes Syncs a nested {\@link FormArray} to a DOM element.
@@ -6606,18 +5529,18 @@ var FormArrayName = (function (_super) {
     return FormArrayName;
 }(ControlContainer));
 FormArrayName.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{ selector: '[formArrayName]', providers: [formArrayNameProvider] },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{ selector: '[formArrayName]', providers: [formArrayNameProvider] },] },
 ];
 /**
  * @nocollapse
  */
 FormArrayName.ctorParameters = function () { return [
-    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Host"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["SkipSelf"] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["F" /* SkipSelf */] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
 ]; };
 FormArrayName.propDecorators = {
-    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['formArrayName',] },],
+    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['formArrayName',] },],
 };
 /**
  * @param {?} parent
@@ -6636,7 +5559,7 @@ function _hasInvalidParent(parent) {
  */
 var controlNameBinding = {
     provide: NgControl,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return FormControlName; })
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return FormControlName; })
 };
 /**
  * \@whatItDoes Syncs a {\@link FormControl} in an existing {\@link FormGroup} to a form control
@@ -6700,7 +5623,7 @@ var FormControlName = (function (_super) {
     function FormControlName(parent, validators, asyncValidators, valueAccessors) {
         var _this = _super.call(this) || this;
         _this._added = false;
-        _this.update = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["EventEmitter"]();
+        _this.update = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["u" /* EventEmitter */]();
         _this._parent = parent;
         _this._rawValidators = validators || [];
         _this._rawAsyncValidators = asyncValidators || [];
@@ -6813,22 +5736,22 @@ var FormControlName = (function (_super) {
     return FormControlName;
 }(NgControl));
 FormControlName.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{ selector: '[formControlName]', providers: [controlNameBinding] },] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{ selector: '[formControlName]', providers: [controlNameBinding] },] },
 ];
 /**
  * @nocollapse
  */
 FormControlName.ctorParameters = function () { return [
-    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Host"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["SkipSelf"] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_ASYNC_VALIDATORS,] },] },
-    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Optional"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Self"] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Inject"], args: [NG_VALUE_ACCESSOR,] },] },
+    { type: ControlContainer, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Q" /* Host */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["F" /* SkipSelf */] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_ASYNC_VALIDATORS,] },] },
+    { type: Array, decorators: [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["C" /* Optional */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["V" /* Self */] }, { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["G" /* Inject */], args: [NG_VALUE_ACCESSOR,] },] },
 ]; };
 FormControlName.propDecorators = {
-    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['formControlName',] },],
-    'model': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['ngModel',] },],
-    'update': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Output"], args: ['ngModelChange',] },],
-    'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"], args: ['disabled',] },],
+    'name': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['formControlName',] },],
+    'model': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['ngModel',] },],
+    'update': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["x" /* Output */], args: ['ngModelChange',] },],
+    'isDisabled': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */], args: ['disabled',] },],
 };
 /**
  * @license
@@ -6839,12 +5762,12 @@ FormControlName.propDecorators = {
  */
 var REQUIRED_VALIDATOR = {
     provide: NG_VALIDATORS,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return RequiredValidator; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return RequiredValidator; }),
     multi: true
 };
 var CHECKBOX_REQUIRED_VALIDATOR = {
     provide: NG_VALIDATORS,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return CheckboxRequiredValidator; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return CheckboxRequiredValidator; }),
     multi: true
 };
 /**
@@ -6894,7 +5817,7 @@ var RequiredValidator = (function () {
     return RequiredValidator;
 }());
 RequiredValidator.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: ':not([type=checkbox])[required][formControlName],:not([type=checkbox])[required][formControl],:not([type=checkbox])[required][ngModel]',
                 providers: [REQUIRED_VALIDATOR],
                 host: { '[attr.required]': 'required ? "" : null' }
@@ -6905,7 +5828,7 @@ RequiredValidator.decorators = [
  */
 RequiredValidator.ctorParameters = function () { return []; };
 RequiredValidator.propDecorators = {
-    'required': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+    'required': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */] },],
 };
 /**
  * A Directive that adds the `required` validator to checkbox controls marked with the
@@ -6934,7 +5857,7 @@ var CheckboxRequiredValidator = (function (_super) {
     return CheckboxRequiredValidator;
 }(RequiredValidator));
 CheckboxRequiredValidator.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: 'input[type=checkbox][required][formControlName],input[type=checkbox][required][formControl],input[type=checkbox][required][ngModel]',
                 providers: [CHECKBOX_REQUIRED_VALIDATOR],
                 host: { '[attr.required]': 'required ? "" : null' }
@@ -6949,7 +5872,7 @@ CheckboxRequiredValidator.ctorParameters = function () { return []; };
  */
 var EMAIL_VALIDATOR = {
     provide: NG_VALIDATORS,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return EmailValidator; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return EmailValidator; }),
     multi: true
 };
 /**
@@ -6997,7 +5920,7 @@ var EmailValidator = (function () {
     return EmailValidator;
 }());
 EmailValidator.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: '[email][formControlName],[email][formControl],[email][ngModel]',
                 providers: [EMAIL_VALIDATOR]
             },] },
@@ -7007,7 +5930,7 @@ EmailValidator.decorators = [
  */
 EmailValidator.ctorParameters = function () { return []; };
 EmailValidator.propDecorators = {
-    'email': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+    'email': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */] },],
 };
 /**
  * Provider which adds {\@link MinLengthValidator} to {\@link NG_VALIDATORS}.
@@ -7018,7 +5941,7 @@ EmailValidator.propDecorators = {
  */
 var MIN_LENGTH_VALIDATOR = {
     provide: NG_VALIDATORS,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return MinLengthValidator; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return MinLengthValidator; }),
     multi: true
 };
 /**
@@ -7062,7 +5985,7 @@ var MinLengthValidator = (function () {
     return MinLengthValidator;
 }());
 MinLengthValidator.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: '[minlength][formControlName],[minlength][formControl],[minlength][ngModel]',
                 providers: [MIN_LENGTH_VALIDATOR],
                 host: { '[attr.minlength]': 'minlength ? minlength : null' }
@@ -7073,7 +5996,7 @@ MinLengthValidator.decorators = [
  */
 MinLengthValidator.ctorParameters = function () { return []; };
 MinLengthValidator.propDecorators = {
-    'minlength': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+    'minlength': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */] },],
 };
 /**
  * Provider which adds {\@link MaxLengthValidator} to {\@link NG_VALIDATORS}.
@@ -7084,7 +6007,7 @@ MinLengthValidator.propDecorators = {
  */
 var MAX_LENGTH_VALIDATOR = {
     provide: NG_VALIDATORS,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return MaxLengthValidator; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return MaxLengthValidator; }),
     multi: true
 };
 /**
@@ -7129,7 +6052,7 @@ var MaxLengthValidator = (function () {
     return MaxLengthValidator;
 }());
 MaxLengthValidator.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: '[maxlength][formControlName],[maxlength][formControl],[maxlength][ngModel]',
                 providers: [MAX_LENGTH_VALIDATOR],
                 host: { '[attr.maxlength]': 'maxlength ? maxlength : null' }
@@ -7140,11 +6063,11 @@ MaxLengthValidator.decorators = [
  */
 MaxLengthValidator.ctorParameters = function () { return []; };
 MaxLengthValidator.propDecorators = {
-    'maxlength': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+    'maxlength': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */] },],
 };
 var PATTERN_VALIDATOR = {
     provide: NG_VALIDATORS,
-    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["forwardRef"])(function () { return PatternValidator; }),
+    useExisting: __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["T" /* forwardRef */])(function () { return PatternValidator; }),
     multi: true
 };
 /**
@@ -7191,7 +6114,7 @@ var PatternValidator = (function () {
     return PatternValidator;
 }());
 PatternValidator.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: '[pattern][formControlName],[pattern][formControl],[pattern][ngModel]',
                 providers: [PATTERN_VALIDATOR],
                 host: { '[attr.pattern]': 'pattern ? pattern : null' }
@@ -7202,7 +6125,7 @@ PatternValidator.decorators = [
  */
 PatternValidator.ctorParameters = function () { return []; };
 PatternValidator.propDecorators = {
-    'pattern': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Input"] },],
+    'pattern': [{ type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["p" /* Input */] },],
 };
 /**
  * @license
@@ -7314,7 +6237,7 @@ var FormBuilder = (function () {
     return FormBuilder;
 }());
 FormBuilder.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"] },
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["c" /* Injectable */] },
 ];
 /**
  * @nocollapse
@@ -7335,7 +6258,7 @@ FormBuilder.ctorParameters = function () { return []; };
 /**
  * \@stable
  */
-var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["Version"]('4.2.5');
+var VERSION = new __WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Version */]('4.2.5');
 /**
  * @license
  * Copyright Google Inc. All Rights Reserved.
@@ -7362,7 +6285,7 @@ var NgNoValidate = (function () {
     return NgNoValidate;
 }());
 NgNoValidate.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["Directive"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["l" /* Directive */], args: [{
                 selector: 'form:not([ngNoForm]):not([ngNativeValidate])',
                 host: { 'novalidate': '' },
             },] },
@@ -7409,7 +6332,7 @@ var InternalFormsSharedModule = (function () {
     return InternalFormsSharedModule;
 }());
 InternalFormsSharedModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */], args: [{
                 declarations: SHARED_FORM_DIRECTIVES,
                 exports: SHARED_FORM_DIRECTIVES,
             },] },
@@ -7435,7 +6358,7 @@ var FormsModule = (function () {
     return FormsModule;
 }());
 FormsModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */], args: [{
                 declarations: TEMPLATE_DRIVEN_DIRECTIVES,
                 providers: [RadioControlRegistry],
                 exports: [InternalFormsSharedModule, TEMPLATE_DRIVEN_DIRECTIVES]
@@ -7455,7 +6378,7 @@ var ReactiveFormsModule = (function () {
     return ReactiveFormsModule;
 }());
 ReactiveFormsModule.decorators = [
-    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["NgModule"], args: [{
+    { type: __WEBPACK_IMPORTED_MODULE_1__angular_core__["b" /* NgModule */], args: [{
                 declarations: [REACTIVE_DRIVEN_DIRECTIVES],
                 providers: [FormBuilder, RadioControlRegistry],
                 exports: [InternalFormsSharedModule, REACTIVE_DRIVEN_DIRECTIVES]
