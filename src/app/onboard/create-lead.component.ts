@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { FileUploader } from 'ng2-file-upload';
+
 
 import { Lead } from './lead';
 import { BackendService } from './../../shared/services/backend.service';
@@ -28,5 +30,8 @@ export class CreateLeadComponent implements OnInit {
             this.router.navigate(['/onboard']);
         });
     }
+
+    public uploader: FileUploader = new FileUploader({ url: '/api/upload' });
+    // public uploader: FileUploader = new FileUploader({ url: '/api/upload', disableMultipart: true });
 
 }

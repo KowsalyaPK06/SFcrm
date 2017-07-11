@@ -1,5 +1,6 @@
 const express = require('express');
 const router = express.Router();
+const multer = require("multer");
 var nforce = require('nforce');
 
 
@@ -33,7 +34,7 @@ router.post('/createLead', (req, res) => {
   org.insert({ sobject: lead }, function (err, resp) {
     console.log(err);
     if (!err) {
-      res.send({"msg": "Successfully Inserted"});
+      res.send({ "msg": "Successfully Inserted" });
     }
   });
 });
@@ -55,6 +56,47 @@ router.get('/getLeads', (req, res) => {
   });
 });
 
+
+var uploadImage = function (file, cb) {
+  var q = "SELECT Id, Name FROM Lead WHERE Name = 'test trigger' LIMIT 1";
+  org.query({ query: q }, function (err, resp) {
+    if (!err && resp.records) {
+      var baseString = file.buffer.toString('base64');
+      var imageData = "data:image/jpeg;base64," + baseString;
+      var imageSrc = '<img alt="images.jpg" src="' + imageData + '"></img>';
+      var lead = resp.records[0];
+      lead.set('Sample_image__c', imageSrc);
+
+      org.update({ sobject: lead }, function (err, resp) {
+        if (!err) {
+          return cb(null, { "msg": "Upload image Success" });
+        }
+        return cb(err);
+      });
+    }
+    return cb(err);
+  });
+};
+
+// to read the uploaded file as buffer
+var upload = multer().single('file');
+
+/** API path that will upload the files */
+router.post('/upload', function (req, res) {
+  upload(req, res, function (err) {
+    if (err) {
+      res.end("Error uploading file.");
+    }
+
+    uploadImage(req.file, function (err, response) {
+      if (!err) {
+        res.end(response);
+      }
+      res.end("Error uploading file", err);
+    });
+  });
+});
+
 router.get('/login', (req, res) => {
   var oauth;
   org.authenticate({ username: 'kowsalya@samplecrm.com', password: 'salesforce@75MOuohAuXr2svXB6UH3BTc2c' }, function (err, resp) {
@@ -64,7 +106,7 @@ router.get('/login', (req, res) => {
     if (!err) {
       console.log("login respnse");
       console.log(resp);
-      res.send({"msg": "Login Success"});
+      res.send({ "msg": "Login Success" });
     }
   });
 });
