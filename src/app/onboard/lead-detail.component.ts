@@ -31,9 +31,9 @@ export class LeadDetailComponent implements OnInit {
           .switchMap((params: Params) => this.backendService.getLead(params['id']))
           .subscribe(lead => {
             this.lead = lead;
-            // this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
-            //   form.append( "id", lead.id );
-            // };
+            this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
+              form.append( "id", lead.id );
+            };
           });
       }
     });

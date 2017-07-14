@@ -25,7 +25,6 @@ router.get('/', (req, res) => {
 router.post('/createLead', (req, res) => {
   var postData = req.body;
   var lead = nforce.createSObject('Lead');
-  console.log(postData);
   lead.set('Salutation', postData.salutation);
   lead.set('FirstName', postData.firstname);
   lead.set('LastName', postData.lastname);
@@ -45,22 +44,23 @@ router.post('/createLead', (req, res) => {
 router.get('/getLeads', (req, res) => {
   var query = "SELECT firstname, LastName, Company, Status, Email, Phone FROM Lead";
   org.query({ query: query, raw: true, fetchAll: true }, function (err, data) {
-    if (err) res.send(err);
-    else {
-      res.send(data.records);
-    };
+    if (err) {
+      return res.send(err);
+    }
+    res.send(data.records);
   });
 });
 
 router.get('/getLead', (req, res) => {
   var leadId = req.query.leadId;
   org.getRecord({ type: 'lead', id: leadId }, function (err, data) {
-    if (err) res.send(err);
-    else {
-      res.send(data);
-    };
+    if (err) {
+      return res.send(err);
+    }
+    res.send(data);
   });
 });
+
 
 var uploadImage = function (file, param, cb) {
   var baseString = file.buffer.toString('base64');
@@ -76,35 +76,24 @@ var uploadImage = function (file, param, cb) {
     }
     return cb(err);
   });
-  return cb(err);
 };
 
 // to read the uploaded file as buffer
 var upload = multer().single('file');
 // let upload  = multer({ storage: multer.memoryStorage() });
 
-// app.post('/single', upload.single('somefile'), (req, res) => {  
-//   console.log(req.body);
-//   console.log(req.file);
-//   res.send();
-// });
-
-
-
 /** API path that will upload the files */
 router.post('/upload', function (req, res) {
-
   upload(req, res, function (err) {
     if (err) {
-      res.end("Error uploading file.");
+      return res.send("Error uploading file.");
     }
-    console.log(req.body);
-    console.log(req.file);
     uploadImage(req.file, req.body, function (err, response) {
       if (!err) {
-        res.end(response);
+        console.log(response);
+        return res.send(response);
       }
-      res.end("Error uploading file", err);
+      res.send(err);
     });
   });
 });
@@ -112,13 +101,10 @@ router.post('/upload', function (req, res) {
 router.get('/login', (req, res) => {
   org.authenticate({ username: 'kowsalya@samplecrm.com', password: 'salesforce@75MOuohAuXr2svXB6UH3BTc2c' }, function (err, resp) {
     // store the oauth object for this user
-    console.log("login error");
-    console.log(err);
     if (!err) {
-      console.log("login respnse");
-      console.log(resp);
-      res.send({ "msg": "Login Success" });
+      return res.send({ "msg": "Login Success" });
     }
+    res.send(err);
   });
 });
 
