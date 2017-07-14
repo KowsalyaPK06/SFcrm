@@ -1,15 +1,10 @@
-interface LeadData {
-    "attribute"?: object;
-    "Salutation"?: string;
-    "FirstName"?: string;
-    "LastName"?: string;
-    "Company"?: string;
-    "Mobile"?: string;
-    "Phone"?: string;
-    "Email"?: string;
-}
-
-export class Lead implements LeadData {
-    constructor(
-    ) { }
+export class Lead {
+    "attributes"?: object;
+    "name"?:string;
+    "salutation"?: string;
+    "firstname"?: string;
+    "lastname"?: string;
+    "company"?: string;
+    "phone"?: string;
+    "email"?: string;
 }

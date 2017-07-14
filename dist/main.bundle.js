@@ -56,6 +56,7 @@ module.exports = "<!--<nav class=\"navbar navbar-fixed-top navbar-dark bg-invers
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__ = __webpack_require__("../../../../../src/shared/services/backend.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__shared_services_status_service__ = __webpack_require__("../../../../../src/shared/services/status.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -68,14 +69,18 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 
 
+
 var AppComponent = (function () {
-    function AppComponent(backendService) {
+    function AppComponent(backendService, statusService) {
         this.backendService = backendService;
+        this.statusService = statusService;
         this.title = 'app';
     }
     AppComponent.prototype.login = function () {
+        var _this = this;
         this.backendService.login().subscribe(function (res) {
             console.log(res);
+            _this.statusService.setLoginStatus(true);
         });
     };
     AppComponent.prototype.ngOnInit = function () {
@@ -89,10 +94,10 @@ AppComponent = __decorate([
         template: __webpack_require__("../../../../../src/app/app.component.html"),
         styles: [__webpack_require__("../../../../../src/app/app.component.css")]
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__["a" /* BackendService */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__shared_services_backend_service__["a" /* BackendService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_2__shared_services_status_service__["a" /* StatusService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__shared_services_status_service__["a" /* StatusService */]) === "function" && _b || Object])
 ], AppComponent);
 
-var _a;
+var _a, _b;
 //# sourceMappingURL=app.component.js.map
 
 /***/ }),
@@ -108,6 +113,7 @@ var _a;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__app_component__ = __webpack_require__("../../../../../src/app/app.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__not_found_component__ = __webpack_require__("../../../../../src/app/not-found.component.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__shared_services_backend_service__ = __webpack_require__("../../../../../src/shared/services/backend.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7__shared_services_status_service__ = __webpack_require__("../../../../../src/shared/services/status.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -115,6 +121,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -139,7 +146,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_5__not_found_component__["a" /* NoComponentFound */]
         ],
         providers: [
-            __WEBPACK_IMPORTED_MODULE_6__shared_services_backend_service__["a" /* BackendService */]
+            __WEBPACK_IMPORTED_MODULE_6__shared_services_backend_service__["a" /* BackendService */],
+            __WEBPACK_IMPORTED_MODULE_7__shared_services_status_service__["a" /* StatusService */]
         ],
         bootstrap: [__WEBPACK_IMPORTED_MODULE_4__app_component__["a" /* AppComponent */]]
     })
@@ -154,17 +162,15 @@ AppModule = __decorate([
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__not_found_component__ = __webpack_require__("../../../../../src/app/not-found.component.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return appRouting; });
-
 
 var appRoutes = [
     { path: '', redirectTo: '/onboard', pathMatch: 'full' },
-    { path: 'onboard', loadChildren: 'app/onboard/onboarding.module#OnboardingModule' },
-    { path: '**', redirectTo: '/404', pathMatch: 'full' },
-    { path: '404', component: __WEBPACK_IMPORTED_MODULE_1__not_found_component__["a" /* NoComponentFound */] }
+    { path: 'onboard', loadChildren: 'app/onboard/onboarding.module#OnboardingModule' }
+    // { path: '**', redirectTo: '/404', pathMatch: 'full' },
+    // { path: '404', component: NoComponentFound }
 ];
-var appRouting = __WEBPACK_IMPORTED_MODULE_0__angular_router__["b" /* RouterModule */].forRoot(appRoutes);
+var appRouting = __WEBPACK_IMPORTED_MODULE_0__angular_router__["c" /* RouterModule */].forRoot(appRoutes);
 //# sourceMappingURL=app.routing.js.map
 
 /***/ }),
@@ -257,7 +263,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-// import 'rxjs/Rx';
 var BackendService = (function () {
     function BackendService(http) {
         this.http = http;
@@ -274,6 +279,13 @@ var BackendService = (function () {
         return this.http.post('/api/createLead', body)
             .map(function (res) { return res.json(); });
     };
+    BackendService.prototype.getLead = function (id) {
+        var url = "/api/getLead";
+        var queryParams = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* URLSearchParams */]();
+        queryParams.set("leadId", id);
+        return this.http.get(url, { params: queryParams })
+            .map(function (res) { return res.json(); });
+    };
     BackendService.prototype.handleError = function (error) {
         console.error('An error occurred', error); // for demo purposes only
         return Promise.reject(error.message || error);
@@ -282,11 +294,52 @@ var BackendService = (function () {
 }());
 BackendService = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["b" /* Http */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_http__["c" /* Http */]) === "function" && _a || Object])
 ], BackendService);
 
 var _a;
 //# sourceMappingURL=backend.service.js.map
+
+/***/ }),
+
+/***/ "../../../../../src/shared/services/status.service.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__ = __webpack_require__("../../../../rxjs/BehaviorSubject.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return StatusService; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+var StatusService = (function () {
+    function StatusService() {
+        this.loginStatus = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["BehaviorSubject"](false);
+    }
+    StatusService.prototype.setLoginStatus = function (loginStatus) {
+        console.log("In setloginstatus", loginStatus);
+        this.loginStatus.next(loginStatus);
+    };
+    StatusService.prototype.getLoginStatus = function () {
+        return this.loginStatus.asObservable();
+    };
+    return StatusService;
+}());
+StatusService = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Injectable"])(),
+    __metadata("design:paramtypes", [])
+], StatusService);
+
+//# sourceMappingURL=status.service.js.map
 
 /***/ }),
 

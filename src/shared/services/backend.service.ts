@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, URLSearchParams } from '@angular/http';
 import 'rxjs/add/operator/map';
-// import 'rxjs/Rx';
 
 
 @Injectable()
@@ -23,6 +22,13 @@ export class BackendService {
       .map(res => res.json());
   }
 
+  getLead(id: string) {
+    let url:string = "/api/getLead"
+    let queryParams = new URLSearchParams();
+    queryParams.set("leadId", id);
+    return this.http.get(url, {params: queryParams})
+      .map(res => res.json());
+  }
 
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error); // for demo purposes only

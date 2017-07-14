@@ -25,70 +25,82 @@ router.get('/', (req, res) => {
 router.post('/createLead', (req, res) => {
   var postData = req.body;
   var lead = nforce.createSObject('Lead');
-  lead.set('Salutation', postData.Salutation);
-  lead.set('FirstName', postData.FirstName);
-  lead.set('LastName', postData.LastName);
-  lead.set('Company', postData.Company);
+  console.log(postData);
+  lead.set('Salutation', postData.salutation);
+  lead.set('FirstName', postData.firstname);
+  lead.set('LastName', postData.lastname);
+  lead.set('Company', postData.company);
+  lead.set('Phone', postData.phone);
+  lead.set('Email', postData.email);
   lead.set('Status', 'Open - Not Contacted');
 
   org.insert({ sobject: lead }, function (err, resp) {
-    console.log(err);
-    if (!err) {
-      res.send({ "msg": "Successfully Inserted" });
+    if (err) {
+      return res.send(err);
     }
+    res.send({ "msg": "Successfully Inserted" });
   });
 });
 
 router.get('/getLeads', (req, res) => {
-  org.authenticate({ username: 'kowsalya@samplecrm.com', password: 'salesforce@75MOuohAuXr2svXB6UH3BTc2c' }, function (err, resp) {
-    console.log(err);
-    if (!err) {
-      var query = "SELECT FirstName, LastName, Company, Status, Email, Phone FROM Lead";
-
-      org.query({ query: query, raw: true, fetchAll: true }, function (err, data) {
-        if (err) console.error(err);
-        else {
-          res.send(data.records);
-        };
-      });
-
-    }
+  var query = "SELECT firstname, LastName, Company, Status, Email, Phone FROM Lead";
+  org.query({ query: query, raw: true, fetchAll: true }, function (err, data) {
+    if (err) res.send(err);
+    else {
+      res.send(data.records);
+    };
   });
 });
 
+router.get('/getLead', (req, res) => {
+  var leadId = req.query.leadId;
+  org.getRecord({ type: 'lead', id: leadId }, function (err, data) {
+    if (err) res.send(err);
+    else {
+      res.send(data);
+    };
+  });
+});
 
-var uploadImage = function (file, cb) {
-  var q = "SELECT Id, Name FROM Lead WHERE Name = 'test trigger' LIMIT 1";
-  org.query({ query: q }, function (err, resp) {
-    if (!err && resp.records) {
-      var baseString = file.buffer.toString('base64');
-      var imageData = "data:image/jpeg;base64," + baseString;
-      var imageSrc = '<img alt="images.jpg" src="' + imageData + '"></img>';
-      var lead = resp.records[0];
-      lead.set('Sample_image__c', imageSrc);
+var uploadImage = function (file, param, cb) {
+  var baseString = file.buffer.toString('base64');
+  var imageData = "data:image/jpeg;base64," + baseString;
+  var imageSrc = '<img alt="images.jpg" src="' + imageData + '"></img>';
+  var lead = nforce.createSObject('Lead');
+  lead.set('id', param.id);
+  lead.set('Sample_image__c', imageSrc);
 
-      org.update({ sobject: lead }, function (err, resp) {
-        if (!err) {
-          return cb(null, { "msg": "Upload image Success" });
-        }
-        return cb(err);
-      });
+  org.update({ sobject: lead }, function (err, resp) {
+    if (!err) {
+      return cb(null, { "msg": "Upload image Success" });
     }
     return cb(err);
   });
+  return cb(err);
 };
 
 // to read the uploaded file as buffer
 var upload = multer().single('file');
+// let upload  = multer({ storage: multer.memoryStorage() });
+
+// app.post('/single', upload.single('somefile'), (req, res) => {  
+//   console.log(req.body);
+//   console.log(req.file);
+//   res.send();
+// });
+
+
 
 /** API path that will upload the files */
 router.post('/upload', function (req, res) {
+
   upload(req, res, function (err) {
     if (err) {
       res.end("Error uploading file.");
     }
-
-    uploadImage(req.file, function (err, response) {
+    console.log(req.body);
+    console.log(req.file);
+    uploadImage(req.file, req.body, function (err, response) {
       if (!err) {
         res.end(response);
       }
@@ -98,7 +110,6 @@ router.post('/upload', function (req, res) {
 });
 
 router.get('/login', (req, res) => {
-  var oauth;
   org.authenticate({ username: 'kowsalya@samplecrm.com', password: 'salesforce@75MOuohAuXr2svXB6UH3BTc2c' }, function (err, resp) {
     // store the oauth object for this user
     console.log("login error");

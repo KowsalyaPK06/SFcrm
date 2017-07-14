@@ -6,6 +6,7 @@ import { onboardRouting } from './onboarding.routing';
 
 import { DisplayAllLeadsComponent } from './display-all-leads.component';
 import { CreateLeadComponent } from './create-lead.component';
+import { LeadDetailComponent } from './lead-detail.component';
 import { WebToLeadComponent } from './web-to-lead.component';
 
 import { FileSelectDirective } from 'ng2-file-upload';
@@ -20,6 +21,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
     declarations: [
         DisplayAllLeadsComponent,
         CreateLeadComponent,
+        LeadDetailComponent,
         WebToLeadComponent,
         FileSelectDirective
     ]

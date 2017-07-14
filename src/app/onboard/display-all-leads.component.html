@@ -16,8 +16,8 @@
 				<th>Email</th>
 				<th>Phone</th>
 			</tr>
-			<tr *ngFor="let lead of leads">
-				<td>{{lead.Salutation}} {{lead["FirstName"]}} {{lead["LastName"]}}</td>
+			<tr *ngFor="let lead of leads" (click)="gotoDetail(lead)">
+				<td>{{lead["Salutation"]}} {{lead["FirstName"]}} {{lead["LastName"]}}</td>
 				<td>{{lead.Company}}</td>
 				<td>{{lead.Email}}</td>
 				<td>{{lead.Phone}}</td>

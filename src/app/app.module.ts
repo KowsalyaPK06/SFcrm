@@ -6,6 +6,7 @@ import { appRouting } from './app.routing';
 import { AppComponent } from './app.component';
 import { NoComponentFound } from './not-found.component';
 import { BackendService } from './../shared/services/backend.service';
+import { StatusService } from './../shared/services/status.service';
 
 
 @NgModule({
@@ -19,7 +20,8 @@ import { BackendService } from './../shared/services/backend.service';
     NoComponentFound
   ],
   providers: [
-    BackendService
+    BackendService,
+    StatusService
   ],
   bootstrap: [AppComponent]
 })

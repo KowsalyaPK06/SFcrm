@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BackendService } from './../shared/services/backend.service';
+import { StatusService } from './../shared/services/status.service';
 
 
 @Component({
@@ -14,11 +15,13 @@ export class AppComponent implements OnInit {
 
   constructor(
     private backendService: BackendService,
+    private statusService: StatusService,
   ) { }
 
   login(): void {
     this.backendService.login().subscribe(res => {
       console.log(res);
+      this.statusService.setLoginStatus(true);
     });
   }
 
