@@ -8,7 +8,6 @@ export class StatusService {
     private loginStatus: BehaviorSubject<any> = new BehaviorSubject(false);    
 
     setLoginStatus(loginStatus : boolean){
-        console.log("In setloginstatus", loginStatus);
         this.loginStatus.next(loginStatus);
     }
 

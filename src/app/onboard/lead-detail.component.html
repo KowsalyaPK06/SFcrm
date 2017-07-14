@@ -56,14 +56,21 @@
         </div>
     </div>
 
+    <div *ngIf='leadLoaded && lead.verification_status__c !== "Verified"'>
+        <form>
+            <div class="form-group">
+                <label for="single">single</label>
+                <input type="file" class="form-control btn" name="single" ng2FileSelect [uploader]="uploader" />
+            </div>
 
-     <form>
-        <div class="form-group">
-            <label for="single">single</label>
-            <input type="file" class="form-control btn" name="single" ng2FileSelect [uploader]="uploader" />
+            <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()">Upload</button>
+        </form>
+    </div>
+
+    <div *ngIf='leadLoaded && lead.verification_status__c === "Verified"' class="col-md-6 form-group">
+        <div class="col-md-6">
+            <label>Sample image</label>
         </div>
-
-        <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()">Upload</button>
-    </form> 
-
+        <div class="col-md-6" [innerHtml]="lead.sample_image__c"></div>
+    </div>
 </div>

@@ -133,7 +133,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/onboard/lead-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row align-vertical\">\r\n    <div class=\"col-md-12 align-vertical\">\r\n        Lead Detail - {{lead.salutation}} {{lead.name}}\r\n    </div>\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Salutation</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.salutation}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>First Name</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.firstname}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Last Name</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.lastname}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Company</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.company}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Phone Number</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.phone}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Email</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.email}}\r\n        </div>\r\n    </div>\r\n\r\n\r\n     <form>\r\n        <div class=\"form-group\">\r\n            <label for=\"single\">single</label>\r\n            <input type=\"file\" class=\"form-control btn\" name=\"single\" ng2FileSelect [uploader]=\"uploader\" />\r\n        </div>\r\n\r\n        <button type=\"button\" class=\"btn btn-success btn-s\" (click)=\"uploader.uploadAll()\">Upload</button>\r\n    </form> \r\n\r\n</div>"
+module.exports = "<div class=\"row align-vertical\">\r\n    <div class=\"col-md-12 align-vertical\">\r\n        Lead Detail - {{lead.salutation}} {{lead.name}}\r\n    </div>\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Salutation</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.salutation}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>First Name</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.firstname}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Last Name</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.lastname}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Company</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.company}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Phone Number</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.phone}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Email</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.email}}\r\n        </div>\r\n    </div>\r\n\r\n    <div *ngIf='leadLoaded && lead.verification_status__c !== \"Verified\"'>\r\n        <form>\r\n            <div class=\"form-group\">\r\n                <label for=\"single\">single</label>\r\n                <input type=\"file\" class=\"form-control btn\" name=\"single\" ng2FileSelect [uploader]=\"uploader\" />\r\n            </div>\r\n\r\n            <button type=\"button\" class=\"btn btn-success btn-s\" (click)=\"uploader.uploadAll()\">Upload</button>\r\n        </form>\r\n    </div>\r\n\r\n    <div *ngIf='leadLoaded && lead.verification_status__c === \"Verified\"' class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Sample image</label>\r\n        </div>\r\n        <div class=\"col-md-6\" [innerHtml]=\"lead.sample_image__c\"></div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
@@ -174,8 +174,14 @@ var LeadDetailComponent = (function () {
         this.route = route;
         this.location = location;
         this.lead = {};
+        this.leadLoaded = false;
         this.uploader = new __WEBPACK_IMPORTED_MODULE_4_ng2_file_upload__["FileUploader"]({ url: '/api/upload' });
     }
+    LeadDetailComponent.prototype.getImage = function () {
+        var imageUrl = this.lead.sample_image__c;
+        this.lead.sample_image__c = imageUrl.replace(/&amp;/g, "&");
+        this.leadLoaded = true;
+    };
     LeadDetailComponent.prototype.getLead = function () {
         var _this = this;
         this.statusService.getLoginStatus().subscribe(function (loginStatus) {
@@ -184,6 +190,12 @@ var LeadDetailComponent = (function () {
                     .switchMap(function (params) { return _this.backendService.getLead(params['id']); })
                     .subscribe(function (lead) {
                     _this.lead = lead;
+                    _this.leadLoaded = true;
+                    if (lead.verification_status__c === "Verified") {
+                        _this.getImage();
+                    }
+                    else {
+                    }
                     _this.uploader.onBuildItemForm = function (fileItem, form) {
                         form.append("id", lead.id);
                     };

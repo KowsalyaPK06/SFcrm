@@ -16,6 +16,7 @@ import { StatusService } from './../../shared/services/status.service';
 
 export class LeadDetailComponent implements OnInit {
   lead: Lead = {};
+  leadLoaded: boolean = false;
 
   constructor(
     private backendService: BackendService,
@@ -24,6 +25,12 @@ export class LeadDetailComponent implements OnInit {
     private location: Location
   ) { }
 
+  getImage(): void {
+    let imageUrl: string = this.lead.sample_image__c;
+    this.lead.sample_image__c = imageUrl.replace(/&amp;/g, "&");
+    this.leadLoaded = true;
+  }
+
   getLead(): void {
     this.statusService.getLoginStatus().subscribe(loginStatus => {
       if (loginStatus) {
@@ -31,8 +38,14 @@ export class LeadDetailComponent implements OnInit {
           .switchMap((params: Params) => this.backendService.getLead(params['id']))
           .subscribe(lead => {
             this.lead = lead;
+            this.leadLoaded = true;
+            if (lead.verification_status__c === "Verified") {
+              this.getImage();
+            } else {
+              
+            }
             this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
-              form.append( "id", lead.id );
+              form.append("id", lead.id);
             };
           });
       }

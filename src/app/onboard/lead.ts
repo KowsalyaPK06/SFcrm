@@ -7,4 +7,5 @@ export class Lead {
     "company"?: string;
     "phone"?: string;
     "email"?: string;
+    "sample_image__c"?: string;
 }

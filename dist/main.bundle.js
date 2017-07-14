@@ -326,7 +326,6 @@ var StatusService = (function () {
         this.loginStatus = new __WEBPACK_IMPORTED_MODULE_1_rxjs_BehaviorSubject__["BehaviorSubject"](false);
     }
     StatusService.prototype.setLoginStatus = function (loginStatus) {
-        console.log("In setloginstatus", loginStatus);
         this.loginStatus.next(loginStatus);
     };
     StatusService.prototype.getLoginStatus = function () {
