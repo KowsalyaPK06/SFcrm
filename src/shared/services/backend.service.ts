@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http, URLSearchParams } from '@angular/http';
+import { Headers, Http, URLSearchParams, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 
@@ -23,10 +23,19 @@ export class BackendService {
   }
 
   getLead(id: string) {
-    let url:string = "/api/getLead"
+    let url: string = "/api/getLead";
     let queryParams = new URLSearchParams();
     queryParams.set("leadId", id);
-    return this.http.get(url, {params: queryParams})
+    return this.http.get(url, { params: queryParams })
+      .map(res => res.json());
+  }
+
+  uploadFile(formData: FormData) {
+    let headers = new Headers();
+    headers.append('Accept', 'application/json');
+    let options = new RequestOptions({ headers: headers });
+    let url: string = "/api/upload";
+    return this.http.post(url, formData, options)
       .map(res => res.json());
   }
 

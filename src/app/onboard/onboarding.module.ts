@@ -9,8 +9,6 @@ import { CreateLeadComponent } from './create-lead.component';
 import { LeadDetailComponent } from './lead-detail.component';
 import { WebToLeadComponent } from './web-to-lead.component';
 
-import { FileSelectDirective } from 'ng2-file-upload';
-
 
 @NgModule({
     imports: [
@@ -22,8 +20,7 @@ import { FileSelectDirective } from 'ng2-file-upload';
         DisplayAllLeadsComponent,
         CreateLeadComponent,
         LeadDetailComponent,
-        WebToLeadComponent,
-        FileSelectDirective
+        WebToLeadComponent
     ]
 })
 

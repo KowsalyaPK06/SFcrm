@@ -58,12 +58,7 @@
 
     <div *ngIf='leadLoaded && lead.verification_status__c !== "Verified"'>
         <form>
-            <div class="form-group">
-                <label for="single">single</label>
-                <input type="file" class="form-control btn" name="single" ng2FileSelect [uploader]="uploader" />
-            </div>
-
-            <button type="button" class="btn btn-success btn-s" (click)="uploader.uploadAll()">Upload</button>
+            <input type="file" (change)="onChange($event)" required class="form-control " name="attach_file1" id="attach_file1">
         </form>
     </div>
 

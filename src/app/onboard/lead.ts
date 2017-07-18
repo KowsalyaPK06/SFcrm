@@ -1,5 +1,6 @@
 export class Lead {
     "attributes"?: object;
+    "id"?:string;
     "name"?:string;
     "salutation"?: string;
     "firstname"?: string;

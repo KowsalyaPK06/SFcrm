@@ -2,7 +2,6 @@ import 'rxjs/add/operator/switchMap';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
-import { FileUploader } from 'ng2-file-upload';
 
 
 import { Lead } from './lead';
@@ -38,15 +37,11 @@ export class LeadDetailComponent implements OnInit {
           .switchMap((params: Params) => this.backendService.getLead(params['id']))
           .subscribe(lead => {
             this.lead = lead;
-            this.leadLoaded = true;
             if (lead.verification_status__c === "Verified") {
               this.getImage();
             } else {
-              
+              this.leadLoaded = true;
             }
-            this.uploader.onBuildItemForm = (fileItem: any, form: any) => {
-              form.append("id", lead.id);
-            };
           });
       }
     });
@@ -56,10 +51,20 @@ export class LeadDetailComponent implements OnInit {
     this.getLead();
   }
 
-  public uploader = new FileUploader({ url: '/api/upload' });
-  // public uploader: FileUploader = new FileUploader({ url: '/api/upload', disableMultipart: true });
-
   goBack(): void {
     this.location.back();
   }
+
+  onChange(event: any) {
+    let fileList: FileList = event.target.files;
+    if (fileList.length > 0) {
+      let file: File = fileList[0];
+      let formData: FormData = new FormData();
+      formData.append('file', file, file.name);
+      formData.append("id", this.lead.id);
+      this.backendService.uploadFile(formData)
+        .subscribe(data => console.log(data))
+    }
+  }
+
 }
