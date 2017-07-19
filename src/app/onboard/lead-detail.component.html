@@ -58,7 +58,9 @@
 
     <div *ngIf='leadLoaded && lead.verification_status__c !== "Verified"'>
         <form>
-            <input type="file" (change)="onChange($event)" required class="form-control " name="attach_file1" id="attach_file1">
+            <input type="file" (change)="handleFileInput($event)" required class="form-control " name="Sample_image__c" id="attach_file1">
+            <input type="file" (change)="handleFileInput($event)" required class="form-control " name="Proof_documents__c" id="attach_file2">
+            <button type="button" class="btn btn-s" (click)="uploadFile()">Upload</button>
         </form>
     </div>
 

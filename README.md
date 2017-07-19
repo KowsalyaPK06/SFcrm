@@ -1,6 +1,16 @@
-# CrmNode
+# SFcrm
+
+
+
+
+
+# For Developers
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.2.
+
+## Required Extensions for Editor
+
+Install TSLint and EditorConfig extensions to have the same format throughout the project
 
 ## Development server
 

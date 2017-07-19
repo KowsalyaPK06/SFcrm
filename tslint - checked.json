@@ -1,0 +1,17 @@
+{
+  "rules": {
+    "import-blacklist": [
+      true,
+      "rxjs"
+    ],
+    "indent": [
+      true,
+      "tabs"
+    ],
+    "prefer-const": true,
+    "quotemark": [
+      true,
+      "single"
+    ]
+  }
+}

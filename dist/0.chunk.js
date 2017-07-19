@@ -133,7 +133,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/onboard/lead-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row align-vertical\">\r\n    <div class=\"col-md-12 align-vertical\">\r\n        Lead Detail - {{lead.salutation}} {{lead.name}}\r\n    </div>\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Salutation</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.salutation}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>First Name</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.firstname}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Last Name</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.lastname}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Company</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.company}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Phone Number</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.phone}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Email</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.email}}\r\n        </div>\r\n    </div>\r\n\r\n    <div *ngIf='leadLoaded && lead.verification_status__c !== \"Verified\"'>\r\n        <form>\r\n            <input type=\"file\" (change)=\"onChange($event)\" required class=\"form-control \" name=\"attach_file1\" id=\"attach_file1\">\r\n        </form>\r\n    </div>\r\n\r\n    <div *ngIf='leadLoaded && lead.verification_status__c === \"Verified\"' class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Sample image</label>\r\n        </div>\r\n        <div class=\"col-md-6\" [innerHtml]=\"lead.sample_image__c\"></div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"row align-vertical\">\r\n    <div class=\"col-md-12 align-vertical\">\r\n        Lead Detail - {{lead.salutation}} {{lead.name}}\r\n    </div>\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Salutation</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.salutation}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>First Name</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.firstname}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Last Name</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.lastname}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Company</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.company}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Phone Number</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.phone}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Email</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.email}}\r\n        </div>\r\n    </div>\r\n\r\n    <div *ngIf='leadLoaded && lead.verification_status__c !== \"Verified\"'>\r\n        <form>\r\n            <input type=\"file\" (change)=\"handleFileInput($event)\" required class=\"form-control \" name=\"Sample_image__c\" id=\"attach_file1\">\r\n            <input type=\"file\" (change)=\"handleFileInput($event)\" required class=\"form-control \" name=\"Proof_documents__c\" id=\"attach_file2\">\r\n            <button type=\"button\" class=\"btn btn-s\" (click)=\"uploadFile()\">Upload</button>\r\n        </form>\r\n    </div>\r\n\r\n    <div *ngIf='leadLoaded && lead.verification_status__c === \"Verified\"' class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Sample image</label>\r\n        </div>\r\n        <div class=\"col-md-6\" [innerHtml]=\"lead.sample_image__c\"></div>\r\n    </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -141,11 +141,11 @@ module.exports = "<div class=\"row align-vertical\">\r\n    <div class=\"col-md-
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_rxjs_add_operator_switchMap__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/@angular/core.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__angular_router__ = __webpack_require__("../../../router/@angular/router.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_common__ = __webpack_require__("../../../common/@angular/common.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__ = __webpack_require__("../../../../rxjs/add/operator/switchMap.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_rxjs_add_operator_switchMap__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__shared_services_backend_service__ = __webpack_require__("../../../../../src/shared/services/backend.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__shared_services_status_service__ = __webpack_require__("../../../../../src/shared/services/status.service.ts");
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LeadDetailComponent; });
@@ -171,11 +171,12 @@ var LeadDetailComponent = (function () {
         this.route = route;
         this.location = location;
         this.lead = {};
+        this.filesToUpload = {};
         this.leadLoaded = false;
     }
     LeadDetailComponent.prototype.getImage = function () {
         var imageUrl = this.lead.sample_image__c;
-        this.lead.sample_image__c = imageUrl.replace(/&amp;/g, "&");
+        this.lead.sample_image__c = imageUrl.replace(/&amp;/g, '&');
         this.leadLoaded = true;
     };
     LeadDetailComponent.prototype.getLead = function () {
@@ -185,8 +186,9 @@ var LeadDetailComponent = (function () {
                 _this.route.params
                     .switchMap(function (params) { return _this.backendService.getLead(params['id']); })
                     .subscribe(function (lead) {
+                    console.log(lead);
                     _this.lead = lead;
-                    if (lead.verification_status__c === "Verified") {
+                    if (lead.verification_status__c === 'Verified') {
                         _this.getImage();
                     }
                     else {
@@ -199,27 +201,36 @@ var LeadDetailComponent = (function () {
     LeadDetailComponent.prototype.ngOnInit = function () {
         this.getLead();
     };
+    LeadDetailComponent.prototype.handleFileInput = function (event) {
+        var fileList = event.target.files;
+        var fileName = event.target.name;
+        if (fileList.length > 0) {
+            this.filesToUpload[fileName] = fileList[0];
+            console.log(this.filesToUpload);
+        }
+    };
+    LeadDetailComponent.prototype.uploadFile = function () {
+        var _this = this;
+        var formData = new FormData();
+        formData.append('id', this.lead.id);
+        Object.keys(this.filesToUpload)
+            .map(function (key) {
+            var file = _this.filesToUpload[key];
+            formData.append('file', file, key);
+        });
+        this.backendService.uploadFile(formData)
+            .subscribe(function (data) { return console.log(data); }, function (error) { return alert(error); }, function () { return console.log('on success finish, not on error'); });
+    };
     LeadDetailComponent.prototype.goBack = function () {
         this.location.back();
-    };
-    LeadDetailComponent.prototype.onChange = function (event) {
-        var fileList = event.target.files;
-        if (fileList.length > 0) {
-            var file = fileList[0];
-            var formData = new FormData();
-            formData.append('file', file, file.name);
-            formData.append("id", this.lead.id);
-            this.backendService.uploadFile(formData)
-                .subscribe(function (data) { return console.log(data); });
-        }
     };
     return LeadDetailComponent;
 }());
 LeadDetailComponent = __decorate([
-    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1__angular_core__["d" /* Component */])({
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["d" /* Component */])({
         template: __webpack_require__("../../../../../src/app/onboard/lead-detail.component.html")
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services_backend_service__["a" /* BackendService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__shared_services_status_service__["a" /* StatusService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_services_status_service__["a" /* StatusService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_router__["b" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__angular_common__["c" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__angular_common__["c" /* Location */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_4__shared_services_backend_service__["a" /* BackendService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_4__shared_services_backend_service__["a" /* BackendService */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_5__shared_services_status_service__["a" /* StatusService */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_5__shared_services_status_service__["a" /* StatusService */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1__angular_router__["b" /* ActivatedRoute */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_2__angular_common__["c" /* Location */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__angular_common__["c" /* Location */]) === "function" && _d || Object])
 ], LeadDetailComponent);
 
 var _a, _b, _c, _d;
