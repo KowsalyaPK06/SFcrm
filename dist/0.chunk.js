@@ -133,7 +133,7 @@ var _a, _b, _c;
 /***/ "../../../../../src/app/onboard/lead-detail.component.html":
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row align-vertical\">\r\n    <div class=\"col-md-12 align-vertical\">\r\n        Lead Detail - {{lead.salutation}} {{lead.name}}\r\n    </div>\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Salutation</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.salutation}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>First Name</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.firstname}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Last Name</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.lastname}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Company</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.company}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Phone Number</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.phone}}\r\n        </div>\r\n    </div>\r\n\r\n    <div class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Email</label>\r\n        </div>\r\n        <div class=\"col-md-6\">\r\n            {{lead.email}}\r\n        </div>\r\n    </div>\r\n\r\n    <div *ngIf='leadLoaded && lead.verification_status__c !== \"Verified\"'>\r\n        <form>\r\n            <input type=\"file\" (change)=\"handleFileInput($event)\" required class=\"form-control \" name=\"Sample_image__c\" id=\"attach_file1\">\r\n            <input type=\"file\" (change)=\"handleFileInput($event)\" required class=\"form-control \" name=\"Proof_documents__c\" id=\"attach_file2\">\r\n            <button type=\"button\" class=\"btn btn-s\" (click)=\"uploadFile()\">Upload</button>\r\n        </form>\r\n    </div>\r\n\r\n    <div *ngIf='leadLoaded && lead.verification_status__c === \"Verified\"' class=\"col-md-6 form-group\">\r\n        <div class=\"col-md-6\">\r\n            <label>Sample image</label>\r\n        </div>\r\n        <div class=\"col-md-6\" [innerHtml]=\"lead.sample_image__c\"></div>\r\n    </div>\r\n</div>\r\n"
+module.exports = "<div class=\"row align-vertical\">\r\n\t<div class=\"col-md-12 align-vertical\">\r\n\t\tLead Detail - {{lead.salutation}} {{lead.name}}\r\n\t</div>\r\n\t<div class=\"col-md-6 form-group\">\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t<label>Salutation</label>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t{{lead.salutation}}\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"col-md-6 form-group\">\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t<label>First Name</label>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t{{lead.firstname}}\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"col-md-6 form-group\">\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t<label>Last Name</label>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t{{lead.lastname}}\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"col-md-6 form-group\">\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t<label>Company</label>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t{{lead.company}}\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"col-md-6 form-group\">\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t<label>Phone Number</label>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t{{lead.phone}}\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div class=\"col-md-6 form-group\">\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t<label>Email</label>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t{{lead.email}}\r\n\t\t</div>\r\n\t</div>\r\n\r\n\t<div *ngIf='leadLoaded && lead.verification_status__c !== \"Verified\"'>\r\n\t\t<form>\r\n\t\t\t<div class=\"col-md-6 form-group\">\r\n\t\t\t\t<label> Test - Upload image files to fields </label>\r\n\t\t\t\t<input type=\"file\" (change)=\"handleFileInput($event)\" required class=\"form-control form-group\" name=\"Sample_image__c\" id=\"attach_file1\" accept=\"image/*\">\r\n\t\t\t\t<input type=\"file\" (change)=\"handleFileInput($event)\" required class=\"form-control form-group\" name=\"Proof_documents__c\" id=\"attach_file2\" accept=\"image/*\">\r\n\t\t\t\t<button type=\"button\" class=\"btn btn-s\" (click)=\"uploadFile()\">Upload</button>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\r\n\t\t<form>\r\n\t\t\t<div class=\"col-md-6 form-group\">\r\n\t\t\t\t<label>Test - Upload doc files to attachment</label>\r\n\t\t\t\t<input type=\"file\" (change)=\"handleDocFileInput($event)\" required class=\"form-control form-group\" name=\"comp_reg_document\" id=\"comp_reg_document\" accept=\".pdf\">\r\n\t\t\t\t<!-- <input type=\"file\" (change)=\"handleDocFileInput($event)\" required class=\"form-control form-group\" name=\"pan_proof\" id=\"pan_proof\" accept=\".pdf\"> -->\r\n\t\t\t\t<button type=\"button\" class=\"btn btn-s\" (click)=\"uploadDocFile()\">Upload Docs</button>\r\n\t\t\t</div>\r\n\t\t</form>\r\n\t</div>\r\n\r\n\t<div *ngIf='leadLoaded && lead.verification_status__c === \"Verified\"' class=\"col-md-6 form-group\">\r\n\t\t<div class=\"col-md-6\">\r\n\t\t\t<label>Sample image</label>\r\n\t\t</div>\r\n\t\t<div class=\"col-md-6\" [innerHtml]=\"lead.sample_image__c\"></div>\r\n\t</div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -172,6 +172,7 @@ var LeadDetailComponent = (function () {
         this.location = location;
         this.lead = {};
         this.filesToUpload = {};
+        this.docFilesToUpload = {};
         this.leadLoaded = false;
     }
     LeadDetailComponent.prototype.getImage = function () {
@@ -212,14 +213,41 @@ var LeadDetailComponent = (function () {
     LeadDetailComponent.prototype.uploadFile = function () {
         var _this = this;
         var formData = new FormData();
+        var uploadImage = true;
         formData.append('id', this.lead.id);
+        formData.append('uploadImage', 'true');
         Object.keys(this.filesToUpload)
             .map(function (key) {
             var file = _this.filesToUpload[key];
             formData.append('file', file, key);
         });
         this.backendService.uploadFile(formData)
-            .subscribe(function (data) { return console.log(data); }, function (error) { return alert(error); }, function () { return console.log('on success finish, not on error'); });
+            .subscribe(function (data) { return alert(data.msg); }, function (error) { return alert(error); }, function () { return console.log('on success finish, not on error'); });
+    };
+    LeadDetailComponent.prototype.handleDocFileInput = function (event) {
+        var fileList = event.target.files;
+        var fileName = event.target.name;
+        if (fileList.length > 0) {
+            this.docFilesToUpload[fileName] = fileList[0];
+            console.log(this.docFilesToUpload);
+        }
+    };
+    LeadDetailComponent.prototype.uploadDocFile = function () {
+        var _this = this;
+        var formData = new FormData();
+        var uploadImage = true;
+        formData.append('id', this.lead.id);
+        formData.append('uploadDocs', 'true');
+        Object.keys(this.docFilesToUpload)
+            .map(function (key) {
+            var file = _this.docFilesToUpload[key];
+            formData.append(key, file, file.name);
+        });
+        this.backendService.uploadFile(formData)
+            .subscribe(function (data) { return alert(data.msg); }, function (error) { return alert(error); }, function () {
+            // Can be used if we need to display the file uploaded
+            _this.getLead();
+        });
     };
     LeadDetailComponent.prototype.goBack = function () {
         this.location.back();

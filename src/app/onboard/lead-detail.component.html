@@ -1,73 +1,85 @@
 <div class="row align-vertical">
-    <div class="col-md-12 align-vertical">
-        Lead Detail - {{lead.salutation}} {{lead.name}}
-    </div>
-    <div class="col-md-6 form-group">
-        <div class="col-md-6">
-            <label>Salutation</label>
-        </div>
-        <div class="col-md-6">
-            {{lead.salutation}}
-        </div>
-    </div>
+	<div class="col-md-12 align-vertical">
+		Lead Detail - {{lead.salutation}} {{lead.name}}
+	</div>
+	<div class="col-md-6 form-group">
+		<div class="col-md-6">
+			<label>Salutation</label>
+		</div>
+		<div class="col-md-6">
+			{{lead.salutation}}
+		</div>
+	</div>
 
-    <div class="col-md-6 form-group">
-        <div class="col-md-6">
-            <label>First Name</label>
-        </div>
-        <div class="col-md-6">
-            {{lead.firstname}}
-        </div>
-    </div>
+	<div class="col-md-6 form-group">
+		<div class="col-md-6">
+			<label>First Name</label>
+		</div>
+		<div class="col-md-6">
+			{{lead.firstname}}
+		</div>
+	</div>
 
-    <div class="col-md-6 form-group">
-        <div class="col-md-6">
-            <label>Last Name</label>
-        </div>
-        <div class="col-md-6">
-            {{lead.lastname}}
-        </div>
-    </div>
+	<div class="col-md-6 form-group">
+		<div class="col-md-6">
+			<label>Last Name</label>
+		</div>
+		<div class="col-md-6">
+			{{lead.lastname}}
+		</div>
+	</div>
 
-    <div class="col-md-6 form-group">
-        <div class="col-md-6">
-            <label>Company</label>
-        </div>
-        <div class="col-md-6">
-            {{lead.company}}
-        </div>
-    </div>
+	<div class="col-md-6 form-group">
+		<div class="col-md-6">
+			<label>Company</label>
+		</div>
+		<div class="col-md-6">
+			{{lead.company}}
+		</div>
+	</div>
 
-    <div class="col-md-6 form-group">
-        <div class="col-md-6">
-            <label>Phone Number</label>
-        </div>
-        <div class="col-md-6">
-            {{lead.phone}}
-        </div>
-    </div>
+	<div class="col-md-6 form-group">
+		<div class="col-md-6">
+			<label>Phone Number</label>
+		</div>
+		<div class="col-md-6">
+			{{lead.phone}}
+		</div>
+	</div>
 
-    <div class="col-md-6 form-group">
-        <div class="col-md-6">
-            <label>Email</label>
-        </div>
-        <div class="col-md-6">
-            {{lead.email}}
-        </div>
-    </div>
+	<div class="col-md-6 form-group">
+		<div class="col-md-6">
+			<label>Email</label>
+		</div>
+		<div class="col-md-6">
+			{{lead.email}}
+		</div>
+	</div>
 
-    <div *ngIf='leadLoaded && lead.verification_status__c !== "Verified"'>
-        <form>
-            <input type="file" (change)="handleFileInput($event)" required class="form-control " name="Sample_image__c" id="attach_file1">
-            <input type="file" (change)="handleFileInput($event)" required class="form-control " name="Proof_documents__c" id="attach_file2">
-            <button type="button" class="btn btn-s" (click)="uploadFile()">Upload</button>
-        </form>
-    </div>
+	<div *ngIf='leadLoaded && lead.verification_status__c !== "Verified"'>
+		<form>
+			<div class="col-md-6 form-group">
+				<label> Test - Upload image files to fields </label>
+				<input type="file" (change)="handleFileInput($event)" required class="form-control form-group" name="Sample_image__c" id="attach_file1" accept="image/*">
+				<input type="file" (change)="handleFileInput($event)" required class="form-control form-group" name="Proof_documents__c" id="attach_file2" accept="image/*">
+				<button type="button" class="btn btn-s" (click)="uploadFile()">Upload</button>
+			</div>
+		</form>
 
-    <div *ngIf='leadLoaded && lead.verification_status__c === "Verified"' class="col-md-6 form-group">
-        <div class="col-md-6">
-            <label>Sample image</label>
-        </div>
-        <div class="col-md-6" [innerHtml]="lead.sample_image__c"></div>
-    </div>
+		<form>
+			<div class="col-md-6 form-group">
+				<label>Test - Upload doc files to attachment</label>
+				<input type="file" (change)="handleDocFileInput($event)" required class="form-control form-group" name="comp_reg_document" id="comp_reg_document" accept=".pdf">
+				<!-- <input type="file" (change)="handleDocFileInput($event)" required class="form-control form-group" name="pan_proof" id="pan_proof" accept=".pdf"> -->
+				<button type="button" class="btn btn-s" (click)="uploadDocFile()">Upload Docs</button>
+			</div>
+		</form>
+	</div>
+
+	<div *ngIf='leadLoaded && lead.verification_status__c === "Verified"' class="col-md-6 form-group">
+		<div class="col-md-6">
+			<label>Sample image</label>
+		</div>
+		<div class="col-md-6" [innerHtml]="lead.sample_image__c"></div>
+	</div>
 </div>

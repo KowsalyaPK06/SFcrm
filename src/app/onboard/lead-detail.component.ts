@@ -15,6 +15,7 @@ import { StatusService } from './../../shared/services/status.service';
 export class LeadDetailComponent implements OnInit {
 	lead: Lead = {};
 	filesToUpload: Object = {};
+	docFilesToUpload: Object = {};
 	leadLoaded = false;
 
 	constructor(
@@ -63,7 +64,9 @@ export class LeadDetailComponent implements OnInit {
 
 	uploadFile() {
 		const formData: FormData = new FormData();
+		const uploadImage = true;
 		formData.append('id', this.lead.id);
+		formData.append('uploadImage', 'true');
 
 		Object.keys(this.filesToUpload)
 			.map(key => {
@@ -73,11 +76,45 @@ export class LeadDetailComponent implements OnInit {
 
 		this.backendService.uploadFile(formData)
 			.subscribe(
-			data => console.log(data),
+			data => alert(data.msg),
 			error => alert(error),
 			() => console.log('on success finish, not on error')
 			);
 	}
+
+
+	handleDocFileInput(event: any) {
+		const fileList: FileList = event.target.files;
+		const fileName: string = event.target.name;
+		if (fileList.length > 0) {
+			this.docFilesToUpload[fileName] = fileList[0];
+			console.log(this.docFilesToUpload);
+		}
+	}
+
+	uploadDocFile() {
+		const formData: FormData = new FormData();
+		const uploadImage = true;
+		formData.append('id', this.lead.id);
+		formData.append('uploadDocs', 'true');
+
+		Object.keys(this.docFilesToUpload)
+			.map(key => {
+				const file: File = this.docFilesToUpload[key];
+				formData.append(key, file, file.name);
+			});
+
+		this.backendService.uploadFile(formData)
+			.subscribe(
+			data => alert(data.msg),
+			error => alert(error),
+			() => {
+				// Can be used if we need to display the file uploaded
+				this.getLead();
+			}
+			);
+	}
+
 
 	goBack(): void {
 		this.location.back();
