@@ -39,6 +39,7 @@ export class BackendService {
 		const options = new RequestOptions({ headers: headers });
 		const url = '/api/upload';
 		return this.http.post(url, formData, options)
+			.map(res => res.json())
 			.catch(this.handleError);
 	}
 

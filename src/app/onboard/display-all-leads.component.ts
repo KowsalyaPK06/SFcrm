@@ -36,10 +36,10 @@ export class DisplayAllLeadsComponent implements OnInit {
 	}
 
 	gotoDetail(lead: Lead): void {
-		let selectedLead: any = lead;
-		let url: string = selectedLead.attributes.url;
-		let urlArray: string[] = url.split("/");
-		let id = urlArray[urlArray.length - 1];
+		const selectedLead: any = lead;
+		const url: string = selectedLead.attributes.url;
+		const urlArray: string[] = url.split('/');
+		const id = urlArray[urlArray.length - 1];
 		this.router.navigate(['/onboard/detail', id]);
 	}
 }

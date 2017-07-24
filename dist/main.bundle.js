@@ -301,6 +301,7 @@ var BackendService = (function () {
         var options = new __WEBPACK_IMPORTED_MODULE_1__angular_http__["d" /* RequestOptions */]({ headers: headers });
         var url = '/api/upload';
         return this.http.post(url, formData, options)
+            .map(function (res) { return res.json(); })
             .catch(this.handleError);
     };
     BackendService.prototype.handleError = function (error) {

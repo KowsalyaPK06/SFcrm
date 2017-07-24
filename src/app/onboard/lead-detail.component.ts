@@ -1,7 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Params } from '@angular/router';
 import { Location } from '@angular/common';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/observable/from';
 import 'rxjs/add/operator/switchMap';
+import 'rxjs/add/operator/mergeMap';
 
 import { Lead } from './lead';
 import { BackendService } from './../../shared/services/backend.service';
@@ -17,6 +20,10 @@ export class LeadDetailComponent implements OnInit {
 	filesToUpload: Object = {};
 	docFilesToUpload: Object = {};
 	leadLoaded = false;
+	noOfRequiredDocFiles = 2;
+	isUploadDocs = false;
+	noOfRequiredImgFiles = 2;
+	isUploadImg = false;
 
 	constructor(
 		private backendService: BackendService,
@@ -37,7 +44,7 @@ export class LeadDetailComponent implements OnInit {
 				this.route.params
 					.switchMap((params: Params) => this.backendService.getLead(params['id']))
 					.subscribe(lead => {
-						console.log(lead);
+						// console.log(lead);
 						this.lead = lead;
 						if (lead.verification_status__c === 'Verified') {
 							this.getImage();
@@ -58,13 +65,17 @@ export class LeadDetailComponent implements OnInit {
 		const fileName: string = event.target.name;
 		if (fileList.length > 0) {
 			this.filesToUpload[fileName] = fileList[0];
-			console.log(this.filesToUpload);
+		}
+
+		const filesUploaded = Object.keys(this.filesToUpload).length;
+		this.isUploadImg = false;
+		if (filesUploaded === this.noOfRequiredImgFiles) {
+			this.isUploadImg = true;
 		}
 	}
 
 	uploadFile() {
 		const formData: FormData = new FormData();
-		const uploadImage = true;
 		formData.append('id', this.lead.id);
 		formData.append('uploadImage', 'true');
 
@@ -88,29 +99,36 @@ export class LeadDetailComponent implements OnInit {
 		const fileName: string = event.target.name;
 		if (fileList.length > 0) {
 			this.docFilesToUpload[fileName] = fileList[0];
-			console.log(this.docFilesToUpload);
+		}
+
+		const filesUploaded = Object.keys(this.docFilesToUpload).length;
+		this.isUploadDocs = false;
+		if (filesUploaded === this.noOfRequiredDocFiles) {
+			this.isUploadDocs = true;
 		}
 	}
 
 	uploadDocFile() {
-		const formData: FormData = new FormData();
-		const uploadImage = true;
-		formData.append('id', this.lead.id);
-		formData.append('uploadDocs', 'true');
+		const files = Object.keys(this.docFilesToUpload);
 
-		Object.keys(this.docFilesToUpload)
-			.map(key => {
-				const file: File = this.docFilesToUpload[key];
-				formData.append(key, file, file.name);
-			});
+		const callUploadFile = (key) => {
+			const formData: FormData = new FormData();
+			formData.append('id', this.lead.id);
+			formData.append('uploadDocs', 'true');
+			const file: File = this.docFilesToUpload[key];
+			formData.append(key, file, file.name);
+			return this.backendService.uploadFile(formData)
+		};
 
-		this.backendService.uploadFile(formData)
+		Observable.from(files)
+			.flatMap(callUploadFile)
 			.subscribe(
 			data => alert(data.msg),
 			error => alert(error),
 			() => {
+				alert('All the Files uploaded');
 				// Can be used if we need to display the file uploaded
-				this.getLead();
+				// this.getLead();
 			}
 			);
 	}

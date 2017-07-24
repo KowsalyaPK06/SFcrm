@@ -110,7 +110,8 @@ function uploadAttachmentToLead(param, files, cb) {
 
 		var lead = nforce.createSObject('Lead');
 		lead.set('id', param.id);
-		lead.set('att_comp_reg_document__c', resp.id);
+		const fieldName = 'att_' + file.fieldname + '__c';
+		lead.set(fieldName, resp.id);
 		updateLead(lead, cb);
 	});
 }

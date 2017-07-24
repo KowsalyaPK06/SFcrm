@@ -57,21 +57,21 @@
 	</div>
 
 	<div *ngIf='leadLoaded && lead.verification_status__c !== "Verified"'>
-		<form>
+		<form (ngSubmit)="uploadFile()">
 			<div class="col-md-6 form-group">
 				<label> Test - Upload image files to fields </label>
 				<input type="file" (change)="handleFileInput($event)" required class="form-control form-group" name="Sample_image__c" id="attach_file1" accept="image/*">
 				<input type="file" (change)="handleFileInput($event)" required class="form-control form-group" name="Proof_documents__c" id="attach_file2" accept="image/*">
-				<button type="button" class="btn btn-s" (click)="uploadFile()">Upload</button>
+				<button type="submit" class="btn btn-s" [disabled]="!isUploadImg">Upload</button>
 			</div>
 		</form>
 
-		<form>
+		<form (ngSubmit)="uploadDocFile()">
 			<div class="col-md-6 form-group">
 				<label>Test - Upload doc files to attachment</label>
 				<input type="file" (change)="handleDocFileInput($event)" required class="form-control form-group" name="comp_reg_document" id="comp_reg_document" accept=".pdf">
-				<!-- <input type="file" (change)="handleDocFileInput($event)" required class="form-control form-group" name="pan_proof" id="pan_proof" accept=".pdf"> -->
-				<button type="button" class="btn btn-s" (click)="uploadDocFile()">Upload Docs</button>
+				<input type="file" (change)="handleDocFileInput($event)" required class="form-control form-group" name="pan_proof" id="pan_proof" accept=".pdf">
+				<button type="submit" class="btn btn-s" [disabled]="!isUploadDocs">Upload Docs</button>
 			</div>
 		</form>
 	</div>
