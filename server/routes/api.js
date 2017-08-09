@@ -89,6 +89,17 @@ var uploadImageToLead = function (param, files, cb) {
 };
 
 
+function updateAttachment(att) {
+	console.log('Updating attachment');
+	att.setBody(fs.readFileSync(docPath));
+	console.log(att._getPayload(true));
+
+	org.update({ sobject: att, oauth: oauth }, function (err, res) {
+		if (err) return console.error(err);
+		console.log('[OK] updated!');
+	});
+}
+
 function uploadAttachmentToLead(param, files, cb) {
 	let file = files[0];
 	let fileExt = file.originalname.split('.');

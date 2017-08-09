@@ -1,0 +1,39 @@
+.chat-container .chat-history .joe-message-group li:first-of-type .my-message {
+    border-radius: 5px;
+    background-color: #bdbdbd;
+}
+.joe-message.other-message.shadow-box {
+    background-color: #ffffff !important;
+}
+.chat-container .chat-history .joe-message-group li:last-of-type .other-message {
+    border-radius: 5px !important;
+    background-color: #ffffff !important;
+}
+.chat-container .joe-message .joe-faq-items {
+    background-color: #eaeff3;
+}
+
+.joe-radio-list-btn::before {
+    content: "Select your issue";
+    color: #818182;
+    padding: 10px 5px;
+}
+
+.chat-container .joe-radio-list-btn div {
+    background: transparent;
+    text-align: initial;
+    position: relative;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #d8d7dc;
+}
+.chat-container .joe-radio-list-btn div:last-child {
+    border: none;
+    padding-bottom: 0px;
+}
+.chat-container .joe-radio-list-btn div::after {
+    content: ">";
+    position: absolute;
+    right: 20px;
+    display: inline-flex;
+}
